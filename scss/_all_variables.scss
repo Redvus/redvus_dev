@@ -2,9 +2,9 @@
 =            Variable            =
 ================================*/
 
-$primary:       #862d2c; //
-$secondary:     #d9272e; //
-$third:         #dcc5b4; //
+$primary:       #dfc7b7; // Бежевый
+$secondary:     #ff671b; // Оранжевый
+$third:         #1E252B; // Темный
 
 $action-color:      $secondary;
 
@@ -87,7 +87,7 @@ $HSmall: (
 }
 
 $primary-font:          $font-stack-helvetica;
-$heading-font:          "";
+$heading-font:          "PF DinText Pro";
 $heading-font-light:    "";
 
 $body-font-color:   lighten(#000, 20%);
