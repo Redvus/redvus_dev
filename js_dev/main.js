@@ -32,8 +32,6 @@
 
         redvus_logo_tl.from(redvus_logo_v_pencil, 2, {x: -500, ease:Power1.easeOut})
             .from(redvus_logo_line_v, 2, {x: -500, ease:Power1.easeOut}, '-=2')
-            .from(slogan_V, 2, {opacity: 0, ease:Power1.easeOut}, '-=2')
-            .from(slogan_visual, 2, {opacity: 0, ease:Power1.easeOut})
             .from(redvus_logo_d, 0.8, {x: -300, ease:Power3.easeOut}, '-=0.3')
             .from(slogan_V, 2, {opacity: 0, ease:Power1.easeOut}, '-=2')
             .from(redvus_logo_r, 0.7, {x: -200, ease:Power2.easeOut})
@@ -49,6 +47,11 @@
             .from(redvus_logo_studio_i, 0.3, {x: 300, ease:Back.easeOut}, '-=0.2')
             .from(redvus_logo_studio_o, 0.3, {x: 300, ease:Back.easeOut}, '-=0.2');
         // redvus_logo_tl.to(redvus_logo, 3, {y: '-100%', ease:Linear.easeOut}, '-=1');
+
+        var redvus_slogan_tl = new TimeLineMax();
+
+        redvus_slogan_tl.from(slogan_V, 2, {opacity: 0, ease:Power1.easeOut}, '-=2')
+            .from(slogan_visual, 2, {opacity: 0, ease:Power1.easeOut});
 
     });
 

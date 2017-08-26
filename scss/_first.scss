@@ -1,0 +1,105 @@
+/*=====================================
+=            First Content            =
+=====================================*/
+
+.container {
+
+    &-left {
+        width: 50%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        left: 0;
+        top: 0;
+
+        #redvus_logo {
+            width: 18rem;
+            height: auto;
+            animation: fadeIn 2s;
+
+            &_r,
+            &_d,
+            &_e_up,
+            &_e_middle,
+            &_e_down,
+            &_u_end,
+            &_s_end {
+                fill: $primary;
+                stroke: none;
+                // stroke: $primary;
+                // stroke-width: 0.7rem;
+            }
+
+            &_v_pencil {
+                fill: $secondary;
+                stroke: none;
+                // stroke: $secondary;
+                // stroke-width: 0.7rem;
+            }
+
+            &_line_v {
+                fill: $secondary;
+                stroke: none;
+                // stroke-width: 0.7rem;
+            }
+
+            &_studio {
+                fill: $secondary;
+                stroke: none;
+            }
+        }
+
+    }
+
+    &-right {
+        width: 50%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        right: 0;
+        top: 0;
+
+        &__content {
+
+
+            .slogan-text {
+                font: {
+                    family: $heading-font;
+                    size: 2rem;
+                };
+                text-transform: uppercase;
+                color: $primary;
+                text-align: left;
+            }
+
+            #slogan_R,
+            #slogan_E,
+            #slogan_D,
+            #slogan_V,
+            #slogan_U,
+            #slogan_S {
+                color: $secondary;
+            }
+        }
+    }
+
+}
+
+.entrance {
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: $secondary;
+    transform: translate(-50%, -50%);
+}
+
+/*=====  End of First Content  ======*/
