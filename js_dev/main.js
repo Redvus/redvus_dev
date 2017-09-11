@@ -14,9 +14,10 @@ $(document).ready(function() {
         redvus_logo = $('#redvus_logo');
         redvus_shutter_left = $('.shutter-left');
         redvus_shutter_right = $('.shutter-right');
-        redvus_mebu_v = $('#redvus_menu_v');
-        redvus_mebu_left = $('#redvus_menu_left');
-        redvus_mebu_right = $('#redvus_menu_right');
+        redvus_menu = $('#redvus_menu');
+        redvus_menu_v = $('#redvus_menu_v');
+        redvus_menu_left = $('#redvus_menu_left');
+        redvus_menu_right = $('#redvus_menu_right');
 
     var slogan_R = $('#slogan_R'),
         slogan_real = $('#slogan_real'),
@@ -74,5 +75,22 @@ $(document).ready(function() {
         // .to(slogan_U, 1, {opacity: 0, ease:Back.easeOut})
         // .to(slogan_V, 1, {opacity: 0, ease:Back.easeOut})
         // .to(slogan_S, 1, {opacity: 0, ease:Back.easeOut});
+
+    /*============================
+    =            Menu            =
+    ============================*/
+
+    var redvus_menu_open = new TimelineMax({paused:true, reversed:true});
+    redvus_menu_open.to(redvus_shutter_right, 0.4, {width: '30%', ease:Back.easeOut})
+        .to(redvus_shutter_left, 0.4, {width: '20%', ease:Back.easeOut}, '-=0.4')
+        .to(redvus_menu, 1, {x: '-405%', rotation: '405', ease:Back.easeOut})
+        .to(redvus_menu_v, 0.8, {y: -100, autoAlpha: 0, ease:Back.easeOut}, '-=1');
+
+    redvus_menu.on('click', function () {
+        redvus_menu_open.reversed() ? redvus_menu_open.restart() : redvus_menu_open.reverse();
+    });
+
+    /*=====  End of Menu  ======*/
+
 
 });
