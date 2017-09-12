@@ -6,7 +6,7 @@
     z-index: 900;
 
     &-left {
-        width: 100%;
+        width: 50%;
         height: 100vh;
         display: flex;
         flex-direction: column;
@@ -20,6 +20,7 @@
         #redvus_logo {
             width: 18rem;
             height: auto;
+            opacity: 0;
             // animation: fadeIn 2s;
 
             &_r,
@@ -57,7 +58,7 @@
     }
 
     &-right {
-        width: 0;
+        width: 50%;
         height: 100vh;
         display: flex;
         // flex-direction: column;
@@ -68,21 +69,45 @@
         background-color: $third;
         position: absolute;
 
-        #redvus_menu {
+        #menu {
             width: 3.6rem;
             height: 3.6rem;
+            cursor: pointer;
+            position: absolute;
+            opacity: 0;
+            // transform-origin: 50% 50%;
 
             &_v {
                 fill: $secondary;
                 stroke: none;
             }
 
-            &_left,
-            &_right {
+            &_left_line,
+            &_right_line {
                 fill: none;
                 stroke: $secondary;
                 stroke-width: 0.4rem;
             }
+
+            &_up_line,
+            &_down_line {
+                fill: none;
+                stroke: $secondary;
+                stroke-width: 0.4rem;
+                opacity: 0;
+            }
+
+            &_cross {
+                fill: none;
+                stroke: $secondary;
+                stroke-width: 0.4rem;
+                // opacity: 0;
+            }
+        }
+
+        &__nav {
+            position: absolute;
+            display: none;
         }
 
         // .slogan {
