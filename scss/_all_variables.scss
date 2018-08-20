@@ -2,11 +2,16 @@
 =            Variable            =
 ================================*/
 
-$primary:       #dfc7b7; // Бежевый
-$secondary:     #ff671b; // Оранжевый
-$third:         #1E252B; // Темный
+$primary       : #dfc7b7; // Бежевый
+$secondary     : #ff643c; // Оранжевый #ff671b
+$third         : #201011; // Темный var1: #1E252B
+$fourth        : #fff;
 
-// $action-color:      $secondary;
+$projectFirst  : #323E48;
+$projectSecond : #000;
+
+// $action-color:      $second
+
 
 $border_1:  1px solid $primary;
 $border_2:  2px solid $primary;
@@ -14,6 +19,31 @@ $border_3:  3px solid $primary;
 
 $base-duration:     0.3s;
 $base-timing:       0.3s;
+
+/*----------  Logo & Menu  ----------*/
+$logoColorLight          : $third;
+$logoColorDark           : $fourth;
+$menuLiColor             : $fourth;
+$menuLiColorHover        : $secondary;
+
+/*----------  Layout  ----------*/
+$layoutBackground        : $secondary;
+$layoutShutterBackground : $secondary;
+$contentLeft             : 0;
+$shutterWidth            : 50%;
+$sectionTitleColor       : $fourth;
+
+/*----------  Slogan & Skills  ----------*/
+$sloganColorLight        : $fourth;
+$sloganColorDark         : $third;
+$skillsLiColor           : $third;
+$skillsLiColorHover      : $third;
+$skillsTextColor         : $fourth;
+
+/*----------  Project  ----------*/
+$projectTitleColor       : $fourth;
+$projectTextColor        : $fourth;
+
 /*=====  End of Variable  ======*/
 
 
@@ -86,16 +116,38 @@ $HSmall: (
     font-weight: 400;
 }
 
-$primary-font:          $font-stack-helvetica;
-$heading-font:          "PF DinText Pro";
-$heading-font-light:    "";
+@include font-face (
+    "PF Din Text Comp Pro Medium",
+    "fonts/PFDinTextCompPro-Medium/PFDinTextCompPro-Medium",
+    ("eot", "woff", "ttf", "svg")
+    ) {
+    font-style: normal;
+    font-weight: 400;
+}
 
-$body-font-color:   lighten(#000, 20%);
+@include font-face (
+    "PF DinText Pro Bold",
+    "fonts/PFDinTextPro-Bold/PFDinTextPro-Bold",
+    ("eot", "woff", "ttf", "svg")
+    ) {
+    font-style: normal;
+    font-weight: 700;
+}
 
-$body-font-size:        1rem !default;
-$body-font-weight:      normal !default;
-$body-line-height:      1.4 !default;
-$heading-line-height:   1 !default;
+@import url('https://fonts.googleapis.com/css?family=Russo+One&subset=cyrillic');
+
+$primary-font        : $font-stack-helvetica;
+$heading-font        : "PF DinText Pro";
+// $heading-font        : 'Russo One', sans-serif;
+$heading-font-cond   : "PF Din Text Comp Pro Medium";
+$heading-font-bold   : "PF DinText Pro Bold";
+
+$body-font-color     : $primary;
+
+$body-font-size      : 1rem !default;
+$body-font-weight    : normal !default;
+$body-line-height    : 1.4 !default;
+$heading-line-height : 1 !default;
 
 $bourbon: (
     "modular-scale-base": $body-font-size,
@@ -162,56 +214,56 @@ $font-size-h6:      modular-scale(1) !default; // ~1.2rem 19px
 =            Layout            =
 ==============================*/
 
-%scrollbar_body {
-    &::-webkit-scrollbar-track {
-        background-color: transparent;
-    }
+// %scrollbar_body {
+//     &::-webkit-scrollbar-track {
+//         background-color: transparent;
+//     }
 
-    &::-webkit-scrollbar {
-        width: 6px;
-        background: transparent;
+//     &::-webkit-scrollbar {
+//         width: 6px;
+//         background: transparent;
 
-        &::window-inactive {
+//         // &::window-inactive {
 
-        }
+//         // }
 
-    }
+//     }
 
-    &::-webkit-scrollbar-thumb {
-        background-color: lighten($secondary, 60%);
+//     &::-webkit-scrollbar-thumb {
+//         background-color: lighten($secondary, 60%);
 
-        &:window-inactive {
-            background-color: #fff;
-        }
-    }
-}
+//         &:window-inactive {
+//             background-color: #fff;
+//         }
+//     }
+// }
 
-%scrollbar_sidebar {
-    &::-webkit-scrollbar-track {
-        background-color: transparent;
-    }
+// %scrollbar_sidebar {
+//     &::-webkit-scrollbar-track {
+//         background-color: transparent;
+//     }
 
-    &::-webkit-scrollbar {
-        width: 4px;
-        background: transparent;
+//     &::-webkit-scrollbar {
+//         width: 4px;
+//         background: transparent;
 
-    }
+//     }
 
-    &::-webkit-scrollbar-thumb {
-        background-color: lighten($secondary, 70%);
-        //border: 2px solid #555555;
+//     &::-webkit-scrollbar-thumb {
+//         background-color: lighten($secondary, 70%);
+//         //border: 2px solid #555555;
 
-        &:window-inactive {
-            opacity: 0;
-        }
-    }
-}
+//         &:window-inactive {
+//             opacity: 0;
+//         }
+//     }
+// }
 
 body {
     @extend %px;
     margin: 0;
     //background-color: #000;
-    @extend %scrollbar_body;
+    // @extend %scrollbar_body;
 }
 
 h1 {
@@ -264,6 +316,7 @@ h6 {
 
 ul {
     margin: 0;
+    padding: 0;
     list-style: none;
 
     li {
@@ -280,11 +333,11 @@ a {
     transition: color $base-duration;
     outline: none;
 
-    &:active,
-    &:focus,
-    &:hover {
-        //color: $action-color;
-    }
+    // &:active,
+    // &:focus,
+    // &:hover {
+    //     //color: $action-color;
+    // }
 }
 
 svg {

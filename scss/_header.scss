@@ -1,0 +1,250 @@
+/*==============================
+=            Header            =
+==============================*/
+
+.shutter {
+    z-index: 9999;
+    position: relative;
+
+    &-left {
+        width: $shutterWidth;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        // left: 0;
+        top: 0;
+        background-color: $layoutShutterBackground;
+        position: fixed;
+        // transition: background 0.8s;
+
+        #redvus_logo {
+            width: 18rem;
+            height: auto;
+            opacity: 0;
+            // animation: fadeIn 2s;
+
+            &_r,
+            &_d,
+            &_e_up,
+            &_e_middle,
+            &_e_down,
+            &_u_end,
+            &_s_end {
+                fill: $logoColorLight;
+                stroke: none;
+                // stroke: $primary;
+                // stroke-width: 0.7rem;
+            }
+
+            &_v_pencil {
+                fill: $logoColorDark;
+                stroke: none;
+                // stroke: $secondary;
+                // stroke-width: 0.7rem;
+            }
+
+            &_line_v {
+                fill: $logoColorDark;
+                stroke: none;
+                // stroke-width: 0.7rem;
+            }
+
+            &_studio {
+                fill: $logoColorDark;
+                stroke: none;
+            }
+        }
+
+    }
+
+    &-right {
+        width: $shutterWidth;
+        height: 100vh;
+        display: flex;
+        // flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        right: 0;
+        top: 0;
+        background-color: $layoutShutterBackground;
+        position: fixed;
+        // transition: background 0.8s;
+
+        #menu {
+            width: 3.6rem;
+            height: 3.6rem;
+            cursor: pointer;
+            position: absolute;
+            opacity: 0;
+            // transform-origin: 50% 50%;
+
+            &_v {
+                fill: $logoColorDark;
+                stroke: none;
+            }
+
+            &_left_line,
+            &_right_line {
+                fill: none;
+                stroke: $logoColorDark;
+                stroke-width: 0.4rem;
+            }
+
+            &_up_line,
+            &_down_line {
+                fill: none;
+                stroke: $logoColorDark;
+                stroke-width: 0.4rem;
+                opacity: 0;
+            }
+
+            &_cross {
+                fill: none;
+                stroke: $logoColorDark;
+                stroke-width: 0.4rem;
+                // opacity: 0;
+            }
+        }
+
+        &__nav {
+            width: calc(100% - 10rem);
+            height: calc(100% - 10rem);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5rem;
+            // position: absolute;
+            // display: none;
+
+            ul {
+
+                li {
+
+                    a {
+                        font: {
+                            family: $heading-font-bold;
+                            size: $font-size-h1;
+                        };
+                        text-transform: uppercase;
+                        color: $menuLiColor;
+                        transition: color 0.3s;
+
+                        &:hover {
+                            color: $menuLiColorHover;
+                        }
+                    }
+                }
+            }
+        }
+
+        // .slogan {
+        //     width: 25%;
+        //     height: 100vh;
+        //     display: flex;
+        //     flex-direction: column;
+        //     justify-content: center;
+        //     align-items: center;
+        //     position: relative;
+        //     // left: 50%;
+        //     // top: 50%;
+        //     // overflow: hidden;
+        //     // transform: translate(-50%, -50%);
+
+        //     .slogan-text {
+        //         font: {
+        //             family: $heading-font;
+        //             size: $font-size-h2;
+        //         };
+        //         text-transform: uppercase;
+        //         color: lighten($third, 10%);
+        //         margin: 0;
+        //         // position: absolute;
+        //     }
+
+        //     #slogan_R,
+        //     #slogan_E,
+        //     #slogan_D,
+        //     #slogan_V,
+        //     #slogan_U,
+        //     #slogan_S {
+        //         // color: $secondary;
+        //     }
+        // }
+
+        // .entrance {
+        //     width: 10rem;
+        //     height: 10rem;
+        //     display: flex;
+        //     justify-content: center;
+        //     align-items: center;
+        //     position: absolute;
+        //     // padding: 0 2rem;
+        //     border-radius: 50%;
+        //     //
+        //     border: 0.5rem solid $secondary;
+        //     animation-name: entranceScale;
+        //     animation-duration: 2s;
+        //     animation-fill-mode: both;
+        //     animation-iteration-count: infinite;
+
+        //     &:after {
+        //         content: "";
+        //         width: 10rem;
+        //         height: 10rem;
+        //         display: block;
+        //         border-radius: 50%;
+        //         border: 0.5rem solid $secondary;
+        //         position: absolute;
+        //         top: -0.5rem;
+        //         left: -0.5rem;
+        //         animation-name: entranceScaleAfter;
+        //         animation-duration: 2s;
+        //         animation-delay: 0.3s;
+        //         animation-fill-mode: both;
+        //         animation-iteration-count: infinite;
+        //     }
+
+        //     &:hover {
+        //         animation-duration: 5s;
+        //         // transform: scale(0.6);
+        //         background-color: $secondary;
+
+        //         // &:after {
+        //         //     animation-name: none;
+        //         // }
+        //     }
+        // }
+    }
+}
+
+@keyframes entranceScale {
+    0% {
+        background-color: $secondary;
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(0.9);
+        // background-color: transparent;
+    }
+    100% {
+        transform: scale(1);
+        // background-color: transparent;
+    }
+}
+
+@keyframes entranceScaleAfter {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+/*=====  End of Header  ======*/
