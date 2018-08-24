@@ -14,8 +14,8 @@
         cursorcolor:"#ffffff",
         cursorwidth: "5px",
         // cursorborder: "1px solid #fff",
-        scrollspeed: 120,
-        mousescrollstep: 50,
+        scrollspeed: 80,
+        mousescrollstep: 10,
         zindex: 9999
     });
 
@@ -55,82 +55,93 @@
 
     function redvusFirstSlogan() {
 
-        var tl = new TimelineMax({delay: "3"});
+        var tl = new TimelineMax({delay: "4"});
 
         tl
-            .staggerFrom(redvusSloganNE, 2, {
-                // scale: 1.1,
-                xPercent: "-30",
-                autoAlpha: 0,
-                ease: Back.easeInOut
-            }, 0.3)
-            .from(redvusSloganVseTak, 1, {
-                // scale: 1.1,
-                xPercent: "-50",
-                autoAlpha: 0,
-                ease: Back.easeInOut
-            }, "-=1")
-            .from(redvusSloganSimple, 1, {
-                // scale: 1.1,
-                yPercent: "30",
-                autoAlpha: 0,
-                ease: Back.easeInOut
-            }, "-=0.6")
-            .from(redvusSloganAsItSeems, 1, {
-                // scale: 1.1,
-                yPercent: "50",
-                autoAlpha: 0,
-                ease: Back.easeInOut
-            }, "-=0.3")
-            .to(redvusSloganSimple, 0.3, {
-                // scale: 1.1,
-                yPercent: "30",
-                autoAlpha: 0,
-                ease: Back.easeInOut
-            }, "+=0.8")
-            .to(redvusSloganAsItSeems, 0.3, {
-                // scale: 1.1,
-                yPercent: "30",
-                autoAlpha: 0,
-                ease: Back.easeInOut
-            })
-            .from(redvusSloganHard, 1, {
-                // scale: 1.1,
-                yPercent: "50",
-                autoAlpha: 0,
-                ease: Back.easeInOut
-            })
-            .from(redvusSloganLooksLike, 1, {
-                // scale: 1.1,
-                xPercent: "50",
-                autoAlpha: 0,
-                ease: Back.easeInOut
-            })
-            .from(redvusSloganInReality, 1, {
-                // scale: 1.1,
-                xPercent: "50",
-                autoAlpha: 0,
-                ease: Back.easeInOut
-            }, "-=0.6")
-            .to(redvusFrontSlogan, 2, {
+            // .staggerFrom(redvusSloganNE, 2, {
+            //     // scale: 1.1,
+            //     xPercent: "-30",
+            //     autoAlpha: 0,
+            //     ease: Back.easeInOut
+            // }, 0.3)
+            // .from(redvusSloganVseTak, 1, {
+            //     // scale: 1.1,
+            //     xPercent: "-50",
+            //     autoAlpha: 0,
+            //     ease: Back.easeInOut
+            // }, "-=1")
+            // .from(redvusSloganSimple, 1, {
+            //     // scale: 1.1,
+            //     yPercent: "30",
+            //     autoAlpha: 0,
+            //     ease: Back.easeInOut
+            // }, "-=0.6")
+            // .from(redvusSloganAsItSeems, 1, {
+            //     // scale: 1.1,
+            //     yPercent: "50",
+            //     autoAlpha: 0,
+            //     ease: Back.easeInOut
+            // }, "-=0.3")
+            // .to(redvusSloganSimple, 0.3, {
+            //     // scale: 1.1,
+            //     yPercent: "30",
+            //     autoAlpha: 0,
+            //     ease: Back.easeInOut
+            // }, "+=0.8")
+            // .to(redvusSloganAsItSeems, 0.3, {
+            //     // scale: 1.1,
+            //     yPercent: "30",
+            //     autoAlpha: 0,
+            //     ease: Back.easeInOut
+            // })
+            // .from(redvusSloganHard, 1, {
+            //     // scale: 1.1,
+            //     yPercent: "50",
+            //     autoAlpha: 0,
+            //     ease: Back.easeInOut
+            // })
+            // .from(redvusSloganLooksLike, 1, {
+            //     // scale: 1.1,
+            //     xPercent: "50",
+            //     autoAlpha: 0,
+            //     ease: Back.easeInOut
+            // })
+            // .from(redvusSloganInReality, 1, {
+            //     // scale: 1.1,
+            //     xPercent: "50",
+            //     autoAlpha: 0,
+            //     ease: Back.easeInOut
+            // }, "-=0.6")
+            // .to(redvusFrontSlogan, 2, {
+            //     // scale: 1.1,
+            //     // xPercent: "50",
+            //     autoAlpha: 0,
+            //     ease: Power1.easeInOut
+            // })
+            .from(redvusFrontContent, 0.5, {
                 // scale: 1.1,
                 // xPercent: "50",
                 autoAlpha: 0,
                 ease: Power1.easeInOut
             })
-            .from(frontSkills, 1, {
-                // scale: 1.1,
-                // xPercent: "50",
-                autoAlpha: 0,
-                ease: Power1.easeInOut
-            })
+            // .from(frontSkills, 1, {
+            //     // scale: 1.1,
+            //     // xPercent: "50",
+            //     autoAlpha: 0,
+            //     ease: Power1.easeInOut
+            // }, "-=0.5")
             .staggerFrom(frontSkillsLi, 0.6, {
                 // scale: 1.1,
                 yPercent: "20",
                 autoAlpha: 0,
                 ease: Back.easeInOut
             }, 0.1)
-
+            .from(sectionFirstArrowDown, 0.8, {
+                // scale: 1.1,
+                yPercent: "100",
+                // autoAlpha: 0,
+                ease: Back.easeInOut
+            })
         ;
 
         return tl;
@@ -157,7 +168,7 @@
         redvus_menu_up = $('#menu_up_line'),
         redvus_menu_down = $('#menu_down_line'),
         redvus_menu_cross = $('#menu_cross')
-        redvusFirstContent = $('.first-content')
+        redvusFrontContent = $('.front-content')
     ;
 
     // var slogan_R = $('#slogan_R'),
@@ -179,7 +190,7 @@
     function redvusLogoStart() {
 
         var tl = new TimelineMax({
-            // onComplete: redvusFirstSlogan()
+            onComplete: redvusFirstSlogan()
         });
 
         tl
@@ -262,9 +273,9 @@
                 y: -100,
                 ease:Back.easeOut
             }, '-=0.7')
-            .set([redvus_shutter_left, redvus_shutter_right], {
-                backgroundColor: "transparent"
-            })
+            // .set([redvus_shutter_left, redvus_shutter_right], {
+            //     backgroundColor: "transparent"
+            // })
         ;
 
         return tl;
@@ -316,8 +327,9 @@
                 width: '15%',
                 ease: Power3.easeInOut
             }, '-=0.8')
-            .to(redvusFirstContent, 0.8, {
+            .to(redvusFrontContent, 0.8, {
                 left: '15%',
+                autoAlpha: 0,
                 ease: Power2.easeInOut
             }, '-=0.8')
             .to(redvus_menu, 0.8, {
@@ -356,11 +368,6 @@
                 autoAlpha: 0,
                 ease: Back.easeOut
             }, "0.1")
-            .to(redvusFirstContent, 0.6, {
-                // scale: 1,
-                autoAlpha: 0,
-                ease:Power1.easeOut
-            }, '-=1.3')
             // .to(redvus_logo, 1.3, {
             //     scale: '0.4',
             //     ease: Back.easeOut
@@ -392,12 +399,16 @@
     var sectionFirstProject = document.querySelectorAll('#sectionFirst .section-title'),
         sectionFirstTitle = document.querySelectorAll('#sectionFirst .section-project__text h2'),
         sectionFirstText = document.querySelectorAll('#sectionFirst .section-project__text'),
-        sectionFirstDescription = document.querySelectorAll('#sectionFirst .section-project__text span'),
+        sectionFirstDescription = document.querySelectorAll('#sectionFirst .section-project__link'),
         sectionFirstImage = document.querySelectorAll('#sectionFirst .section-project__image'),
         sectionFirst = document.getElementById('sectionFirst'),
         sectionFirstShutterLeft = document.querySelector('.shutter-left'),
         sectionFirstShutterRight = document.querySelector('.shutter-right'),
-        wrapperBack = document.querySelector('.wrapper')
+        wrapperBack = document.querySelector('.wrapper'),
+        sectionFirstArrowDown = document.querySelector('.arrow-down'),
+        sectionFrontSkills = document.getElementById('frontSkills'),
+        sectionFirstTop = document.getElementById('sectionFirstTop'),
+        sectionLinkProject = document.querySelectorAll('.section-project__text a::before')
     ;
 
     var controller = new ScrollMagic.Controller({
@@ -432,22 +443,36 @@
             // })
             .addTo(controller)
         ;
+    }
 
-        // sectionFirstTitleAction.on('enter', function(){
-        //     // sectionFirstProject.addClass('is-active');
-        //     // sectionFirstProject.classList.add('is-active');
-        //     addClass(sectionFirstProject, 'is-active');
-        //     // sectionFirst.className += ' section-project__back';
-        //     // sectionFirst.addClass('section-project__back');
-        // });
+    /*----------  First Link Project  ----------*/
+    function sectionFirstLinkScroll() {
+        var sectionFirstLinkAction = new ScrollMagic.Scene({
+                triggerElement: sectionFirst,
+                triggerHook: 0.15,
+                duration: '100%'
+            })
+            .setClassToggle(sectionFirstDescription, 'is-active')
+            // .addIndicators({
+            //     name: 'sectionSecondTitle'
+            // })
+            .addTo(controller)
+        ;
+    }
 
-        // sectionFirstTitleAction.on('leave', function(){
-        //     // sectionFirstProject.classList.remove('is-active');
-        //     removeClass(sectionFirstProject, 'is-active');
-        //     // sectionFirst.className -= ' section-project__back';
-        //     // sectionFirstProject.removeClass('is-active');
-        //     // sectionFirst.removeClass('section-project__back');
-        // });
+    /*----------  First Arrow Down  ----------*/
+    function firstArrowDownScroll() {
+        var firstArrowDownAction = new ScrollMagic.Scene({
+                triggerElement: sectionFirst,
+                triggerHook: 0.85,
+                duration: '100%'
+            })
+            .setClassToggle(sectionFirstArrowDown, 'is-hidden')
+            // .addIndicators({
+            //     name: 'sectionSecondTitle'
+            // })
+            .addTo(controller)
+        ;
     }
 
     /*----------  First Section  ----------*/
@@ -467,18 +492,19 @@
                 // display: 'n_25',
                 ease: Power0.easeNone
             }, '-=0.5')
-            .to(sectionFirstDescription, 0.5, {
-                yPercent: "-100%",
-                // autoAlpha: 1,
-                // display: 'n_25',
-                ease: Power0.easeNone
-            }, '-=1')
+            // .to(sectionFirstDescription, 0.5, {
+            //     yPercent: "-100%",
+            //     // autoAlpha: 1,
+            //     // display: 'n_25',
+            //     ease: Power0.easeNone
+            // }, '-=1')
             .to(sectionFirstImage, 1, {
                 yPercent: "-150%",
                 autoAlpha: 1,
                 // display: 'n_25',
                 ease: Power0.easeNone
             }, '-=1')
+            // .set(sectionFirstArrowDown, {className: "+=is-hidden"})
         ;
 
         var sectionFirstAction = new ScrollMagic.Scene({
@@ -487,6 +513,7 @@
                 duration: '100%'
             })
             .setTween(tl)
+            // .setClassToggle(sectionFrontSkills, 'is-hidden')
             // .addIndicators({
             //     name: 'sectionFirst'
             // })
@@ -502,7 +529,7 @@
 
     var sectionSecondProject = document.querySelectorAll('#sectionSecond .section-title'),
         sectionSecondTitle = document.querySelectorAll('#sectionSecond .section-project__text h2'),
-        sectionSecondDescription = document.querySelectorAll('#sectionSecond .section-project__text span'),
+        sectionSecondDescription = document.querySelectorAll('#sectionSecond .section-project__link'),
         sectionSecondImage = document.querySelectorAll('#sectionSecond .section-project__image'),
         sectionSecond = document.getElementById('sectionSecond')
     ;
@@ -537,6 +564,21 @@
         ;
     }
 
+    /*----------  Second Link Project  ----------*/
+    function sectionSecondLinkScroll() {
+        var sectionSecondLinkAction = new ScrollMagic.Scene({
+                triggerElement: sectionSecond,
+                triggerHook: 0.15,
+                duration: '100%'
+            })
+            .setClassToggle(sectionSecondDescription, 'is-active')
+            // .addIndicators({
+            //     name: 'sectionSecondTitle'
+            // })
+            .addTo(controller)
+        ;
+    }
+
     /*----------  Second Section  ----------*/
     function sectionSecondScroll() {
         var tl = new TimelineMax();
@@ -553,18 +595,19 @@
                 // display: 'n_25',
                 ease: Power0.easeNone
             }, '-=0.5')
-            .to(sectionSecondDescription, 0.5, {
-                yPercent: "-100%",
-                // autoAlpha: 1,
-                // display: 'n_25',
-                ease: Power0.easeNone
-            }, '-=1')
+            // .to(sectionSecondDescription, 0.5, {
+            //     yPercent: "-100%",
+            //     // autoAlpha: 1,
+            //     // display: 'n_25',
+            //     ease: Power0.easeNone
+            // }, '-=1')
             .to(sectionSecondImage, 1, {
                 yPercent: "-150%",
                 autoAlpha: 1,
                 // display: 'n_25',
                 ease: Power0.easeNone
             }, '-=1')
+            // .set(sectionFirstArrowDown, {className: "+=is-hidden"})
         ;
 
         var sectionSecondAction = new ScrollMagic.Scene({
@@ -590,8 +633,24 @@
         sectionThirdTitle = document.querySelectorAll('#sectionThird .section-project__text h2'),
         sectionThirdImage = document.querySelectorAll('#sectionThird .section-project__image'),
         sectionThird = document.getElementById('sectionThird'),
-        sectionSecondText = document.querySelectorAll('#sectionSecond .section-project__text')
+        sectionSecondText = document.querySelectorAll('#sectionSecond .section-project__text'),
+        sectionThirdDescription = document.querySelectorAll('#sectionThird .section-project__link')
     ;
+
+    /*----------  Third Link Project  ----------*/
+    function sectionThirdLinkScroll() {
+        var sectionThirdLinkAction = new ScrollMagic.Scene({
+                triggerElement: sectionThird,
+                triggerHook: 0.15,
+                duration: '100%'
+            })
+            .setClassToggle(sectionThirdDescription, 'is-active')
+            // .addIndicators({
+            //     name: 'sectionSecondTitle'
+            // })
+            .addTo(controller)
+        ;
+    }
 
     /*----------  Third Section  ----------*/
     function sectionThirdScroll() {
@@ -615,6 +674,7 @@
                 // display: 'n_25',
                 ease: Power0.easeNone
             }, '-=1')
+            // .set(sectionFirstArrowDown, {className: "+=is-hidden"})
         ;
 
         var sectionThirdAction = new ScrollMagic.Scene({
@@ -636,14 +696,17 @@
     redvusMenuOpen();
     sectionFirstScroll();
     sectionFirstBackScroll();
-    // sectionFirstShutterScroll();
     sectionFirstTitleScroll();
+    sectionFirstLinkScroll();
+    firstArrowDownScroll();
 
+    sectionSecondScroll();
     sectionSecondBackScroll();
     sectionSecondTitleScroll();
-    sectionSecondScroll();
+    sectionSecondLinkScroll();
 
     sectionThirdScroll();
+    sectionThirdLinkScroll();
 
 
 })(jQuery);
