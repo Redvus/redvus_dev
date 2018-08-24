@@ -2,6 +2,17 @@ body {
     background-color: $third;
 }
 
+.wrapper {
+
+    &-stopper {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 .center-block {
     display: flex;
     flex-direction: column;
