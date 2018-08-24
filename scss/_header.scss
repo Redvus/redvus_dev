@@ -67,7 +67,7 @@
         justify-content: center;
         align-items: center;
         right: 0;
-        top: 0;
+        bottom: 0;
         // background-color: $layoutShutterBackground;
         position: fixed;
         // transition: background 0.8s;
@@ -217,6 +217,52 @@
         //     }
         // }
     }
+
+    @include grid-media($XSmall) {
+
+        &-left {
+            width: $shutterWidthMobile;
+            // background-color: $layoutShutterBackground;
+            z-index: 9999;
+
+            #redvus_logo {
+                width: 70%;
+            }
+        }
+
+        &-right {
+            width: $shutterWidthMobile;
+            // background-color: $layoutShutterBackground;
+
+            #menu {
+                width: 40px;
+                height: 40px;
+            }
+
+            &__nav {
+                text-align: center;
+
+                ul {
+
+                    li {
+                        margin-bottom: 0.5rem;
+
+                        a {
+                            font-size: 8vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+header {
+
+    // @include grid-media($Small) {
+    //     display: none;
+    //     visibility: hidden;
+    // }
 }
 
 @keyframes entranceScale {

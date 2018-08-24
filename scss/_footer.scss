@@ -8,7 +8,7 @@ $footer-grid: (
 
 footer {
     width: 100%;
-    height: 2rem;
+    min-height: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,6 +19,14 @@ footer {
     p {
         font-size: $font-size-small;
         color: $third;
+    }
+
+    @include grid-media($Small) {
+        width: calc(100% - 2rem);
+        padding: 0 1rem;
+        text-align: center;
+        line-height: 1;
+        bottom: 60px;
     }
 }
 
