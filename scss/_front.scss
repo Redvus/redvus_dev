@@ -52,7 +52,6 @@
 
 .section {
     width: 100%;
-    height: 100vh;
     // display: flex;
     // flex-direction: column;
     // align-items: center;
@@ -62,6 +61,7 @@
     transition: background 1s;
 
     &-top {
+        height: 100vh;
         // display: flex;
         // align-items: center;
         // justify-content: center;
@@ -162,7 +162,7 @@
                     width: 100%;
                     position: absolute;
                     left: 50%;
-                    top: 40%;
+                    top: 50%;
                     transform: translate(-50%, -50%);
 
                     ul {
@@ -174,6 +174,7 @@
                             font: {
                                 family: $heading-font-bold;
                                 size: 1.7vw;
+                                weight: 600;
                             };
                             color: $skillsTextColor;
                             text-transform: uppercase;
@@ -273,9 +274,15 @@
         opacity: 0;
         transition: 0.8s all;
         // transform: translateY(150%);
+
+        &--bottom {
+            position: relative;
+            top: 0;
+        }
     }
 
     &-project {
+        height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -294,7 +301,7 @@
                 width: 100%;
                 font: {
                     family: $heading-font-bold;
-                    size: 8vw;
+                    size: 7vw;
                 };
                 line-height: 1;
                 color: $projectTitleColor;
@@ -318,7 +325,7 @@
             position: absolute;
             margin: 0;
             left: 50%;
-            top: 50%;
+            top: 80%;
             transform: translateX(-50%);
             transition: all 0.8s;
             opacity: 0;
@@ -370,6 +377,75 @@
         }
     }
 
+    &-bottom {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        // padding: 6rem 0;
+
+        ul {
+            width: 60%;
+            min-height: 2rem;
+            text-align: center;
+
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+
+                a {
+                    font: {
+                        family: $heading-font-bold;
+                        size: 3vw;
+                        weight: 700;
+                    };
+                    line-height: 1;
+                    color: $skillsLiColor;
+                    text-transform: uppercase;
+                    margin: 0;
+                    transition: all 0.6s;
+                    cursor: pointer;
+                    z-index: 2;
+                }
+
+                span {
+                    font: {
+                        family: $heading-font-bold;
+                        size: 1.7vw;
+                        weight: 600;
+                    };
+                    color: $skillsTextColor;
+                    text-transform: uppercase;
+                    letter-spacing: 0.15rem;
+                    // margin-top: 0.15rem;
+                    position: absolute;
+                    opacity: 0;
+                    transition: all 0.6s;
+                    cursor: pointer;
+                    z-index: 1;
+                }
+
+                &:hover {
+
+                    a {
+                        color: $skillsTextColor;
+                        letter-spacing: 0.2rem;
+                        // opacity: 0.2;
+                    }
+
+                    span {
+                        opacity: 1;
+                        letter-spacing: 0;
+                    }
+                }
+            }
+        }
+    }
+
     @include grid-media($Small) {
 
         &-title {
@@ -389,10 +465,10 @@
             }
 
             &__link {
-                // width: 90%;
+                width: calc(100% - 2rem);
                 display: inline-block;
                 font-size: 6vw;
-                // margin: 0 1rem;
+                padding: 0 1rem;
                 text-align: center;
                 // opacity: 1;
             }
@@ -401,6 +477,21 @@
                 width: 100%;
                 top: 105%;
                 // opacity: 1;
+            }
+        }
+
+        &-bottom {
+            padding: 0 0 6rem;
+
+            ul {
+
+                li {
+
+                    a {
+                        font-size: 8vw;
+                        line-height: 1.4;
+                    }
+                }
             }
         }
     }

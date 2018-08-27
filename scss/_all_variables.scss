@@ -138,12 +138,15 @@ $HSmall: (
 }
 
 @import url('https://fonts.googleapis.com/css?family=Russo+One&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Roboto:900&subset=cyrillic');
 
 $primary-font        : $font-stack-helvetica;
 $heading-font        : "PF DinText Pro";
 // $heading-font        : 'Russo One', sans-serif;
 $heading-font-cond   : "PF Din Text Comp Pro Medium";
-$heading-font-bold   : "PF DinText Pro Bold";
+// $heading-font-bold   : "PF DinText Pro Bold";
+// $heading-font-bold   : 'Roboto', sans-serif;
+$heading-font-bold   : 'Montserrat', sans-serif;
 
 $body-font-color     : $primary;
 
@@ -202,7 +205,7 @@ $font-size-h6:      modular-scale(1) !default; // ~1.2rem 19px
 %hx {
     font: {
         family: $heading-font-bold;
-        weight: 400;
+        weight: 700;
     };
     //letter-spacing: 0.04em;
     line-height: $heading-line-height;
@@ -212,55 +215,6 @@ $font-size-h6:      modular-scale(1) !default; // ~1.2rem 19px
 }
 /*=====  End of Fonts  ======*/
 
-
-/*==============================
-=            Layout            =
-==============================*/
-
-// %scrollbar_body {
-//     &::-webkit-scrollbar-track {
-//         background-color: transparent;
-//     }
-
-//     &::-webkit-scrollbar {
-//         width: 6px;
-//         background: transparent;
-
-//         // &::window-inactive {
-
-//         // }
-
-//     }
-
-//     &::-webkit-scrollbar-thumb {
-//         background-color: lighten($secondary, 60%);
-
-//         &:window-inactive {
-//             background-color: #fff;
-//         }
-//     }
-// }
-
-// %scrollbar_sidebar {
-//     &::-webkit-scrollbar-track {
-//         background-color: transparent;
-//     }
-
-//     &::-webkit-scrollbar {
-//         width: 4px;
-//         background: transparent;
-
-//     }
-
-//     &::-webkit-scrollbar-thumb {
-//         background-color: lighten($secondary, 70%);
-//         //border: 2px solid #555555;
-
-//         &:window-inactive {
-//             opacity: 0;
-//         }
-//     }
-// }
 
 body {
     @extend %px;
@@ -331,6 +285,7 @@ ul {
 }
 
 a {
+    font-weight: 600;
     color: $primary;
     text-decoration: none;
     transition: color $base-duration;

@@ -627,25 +627,25 @@
     /*=====  End of Second Project  ======*/
 
     /*=====================================
-    =            Third Project            =
+    =            Bottom Section            =
     =====================================*/
 
-    var sectionThirdProject = document.querySelectorAll('#sectionThird .section-title'),
-        sectionThirdTitle = document.querySelectorAll('#sectionThird .section-project__text h2'),
-        sectionThirdImage = document.querySelectorAll('#sectionThird .section-project__image'),
-        sectionThird = document.getElementById('sectionThird'),
+    var sectionBottomProject = document.querySelectorAll('#sectionBottom .section-title'),
+        sectionBottomTitle = document.querySelectorAll('#sectionBottom .section-project__text h2'),
+        sectionBottomImage = document.querySelectorAll('#sectionBottom .section-project__image'),
+        sectionBottom = document.getElementById('sectionBottom'),
         sectionSecondText = document.querySelectorAll('#sectionSecond .section-project__text'),
-        sectionThirdDescription = document.querySelectorAll('#sectionThird .section-project__link')
+        sectionBottomLink = document.querySelectorAll('#sectionBottom ul > li')
     ;
 
-    /*----------  Third Link Project  ----------*/
-    function sectionThirdLinkScroll() {
-        var sectionThirdLinkAction = new ScrollMagic.Scene({
-                triggerElement: sectionThird,
-                triggerHook: 0.15,
+    /*----------  Bottom Section Title  ----------*/
+    function sectionBottomTitleScroll() {
+        var sectionBottomTitleAction = new ScrollMagic.Scene({
+                triggerElement: sectionBottom,
+                triggerHook: 0.6,
                 duration: '100%'
             })
-            .setClassToggle(sectionThirdDescription, 'is-active')
+            .setClassToggle(sectionBottomProject, 'is-active')
             // .addIndicators({
             //     name: 'sectionSecondTitle'
             // })
@@ -653,8 +653,8 @@
         ;
     }
 
-    /*----------  Third Section  ----------*/
-    function sectionThirdScroll() {
+    /*----------  Bottom Section  ----------*/
+    function sectionBottomScroll() {
         var tl = new TimelineMax();
         tl
             .to([sectionSecondText, sectionSecondImage], 0.5, {
@@ -662,36 +662,29 @@
                 // display: 'n_25',
                 ease: Power0.easeNone
             })
-            .to(sectionThirdTitle, 1, {
-                yPercent: "-150%",
-                // color: "#201011",
-                // autoAlpha: 1,
-                // display: 'n_25',
-                ease: Power0.easeNone
-            }, '-=0.5')
-            .to(sectionThirdImage, 1, {
-                yPercent: "-150%",
-                autoAlpha: 1,
-                // display: 'n_25',
-                ease: Power0.easeNone
-            }, '-=1')
+            .staggerFrom(sectionBottomLink, 0.6, {
+                // scale: 1.1,
+                yPercent: "20",
+                autoAlpha: 0,
+                ease: Back.easeInOut
+            }, 0.1)
             // .set(sectionFirstArrowDown, {className: "+=is-hidden"})
         ;
 
-        var sectionThirdAction = new ScrollMagic.Scene({
-                triggerElement: sectionThird,
+        var sectionBottomAction = new ScrollMagic.Scene({
+                triggerElement: sectionBottom,
                 triggerHook: 1,
                 duration: '100%'
             })
             .setTween(tl)
             // .addIndicators({
-            //     name: 'sectionThird'
+            //     name: 'sectionBottom'
             // })
             .addTo(controller)
         ;
     }
 
-    /*=====  End of Third Project  ======*/
+    /*=====  End of Bottom Section  ======*/
 
     /*======================================
     =            Load in Mobile            =
@@ -882,8 +875,7 @@
 
     /*=====  End of Menu Mobile  ======*/
 
-    if ($(window).width() > 420 || screen.width > 420) {
-
+    function init() {
         scrollbarAllSmooth();
 
         redvusLogoStart();
@@ -900,11 +892,11 @@
         sectionSecondTitleScroll();
         sectionSecondLinkScroll();
 
-        sectionThirdScroll();
-        sectionThirdLinkScroll();
+        sectionBottomScroll();
+        sectionBottomTitleScroll();
+    }
 
-    } else {
-
+    function initMobile() {
         redvusLogoStartMobile();
         redvusMenuOpenMobile();
 
@@ -919,8 +911,21 @@
         sectionSecondTitleScroll();
         sectionSecondLinkScroll();
 
-        sectionThirdScroll();
-        sectionThirdLinkScroll();
+        sectionBottomScroll();
+        sectionBottomTitleScroll();
+    }
+
+    if (document.body.clientWidth > 420 || screen.width > 420) {
+
+        window.onload = function() {
+            init();
+        };
+
+    } else {
+
+        window.onload = function() {
+            initMobile();
+        };
     }
 
 })(jQuery);
