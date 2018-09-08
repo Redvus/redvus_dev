@@ -7,9 +7,6 @@ $secondary     : #ff643c; // Оранжевый #ff671b
 $third         : #201011; // Темный var1: #1E252B
 $fourth        : #fff;
 
-$projectFirst  : #323E48;
-$projectSecond : #000;
-
 // $action-color:      $second
 
 
@@ -29,6 +26,12 @@ $menuLiColorHover        : $secondary;
 /*----------  Layout  ----------*/
 $layoutBackground        : $secondary;
 $layoutShutterBackground : $secondary;
+
+$projectFirst  : #323E48;
+$projectSecond : #000;
+$layoutBackgroundFirst   : lighten($projectFirst, 15%);
+$layoutBackgroundSecond  : lighten($projectSecond, 40%);
+
 $contentLeft             : 0;
 $shutterWidth            : 50%;
 $sectionTitleColor       : $fourth;
@@ -40,12 +43,13 @@ $shutterWidthMobile      : 100%;
 $sloganColorLight        : $fourth;
 $sloganColorDark         : $third;
 $skillsLiColor           : $third;
-$skillsLiColorHover      : $third;
+$skillsLiColorHover      : lighten($layoutBackground, 10%);
 $skillsTextColor         : $fourth;
 
 /*----------  Project  ----------*/
-$projectTitleColor       : $fourth;
+$projectTitleColor       : rgba($fourth, 0.3);
 $projectTextColor        : $fourth;
+$projectTitleColorMobile : rgba($fourth, 0.6);
 
 /*=====  End of Variable  ======*/
 
@@ -139,6 +143,7 @@ $HSmall: (
 
 @import url('https://fonts.googleapis.com/css?family=Russo+One&subset=cyrillic');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Roboto:900&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Oswald:400,600,700|PT+Sans+Narrow:400,700&subset=cyrillic');
 
 $primary-font        : $font-stack-helvetica;
 $heading-font        : "PF DinText Pro";
@@ -146,7 +151,11 @@ $heading-font        : "PF DinText Pro";
 $heading-font-cond   : "PF Din Text Comp Pro Medium";
 // $heading-font-bold   : "PF DinText Pro Bold";
 // $heading-font-bold   : 'Roboto', sans-serif;
-$heading-font-bold   : 'Montserrat', sans-serif;
+// $heading-font-bold   : 'Montserrat', sans-serif;
+// $heading-font-bold   : 'Open Sans Condensed', sans-serif;
+// $heading-font-bold   : 'PT Sans Narrow', sans-serif;
+$heading-font-bold   : 'Oswald', sans-serif;
+$subheading-font     : 'Montserrat', sans-serif;
 
 $body-font-color     : $primary;
 

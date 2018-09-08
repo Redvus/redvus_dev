@@ -137,11 +137,11 @@
     }
 
     &--back-first {
-        background-color: lighten($projectFirst, 15%);
+        background-color: $layoutBackgroundFirst;
     }
 
     &--back-second {
-        background-color: lighten($projectSecond, 40%);
+        background-color: $layoutBackgroundSecond;
     }
 
     &-process {
@@ -206,7 +206,7 @@
 
 .arrow-down {
     width: 1rem;
-    height: 15%;
+    height: 10%;
     display: block;
     border-radius: 20px;
     position: absolute;
@@ -246,6 +246,7 @@
     }
 
     @include grid-media($Small) {
+        display: none;
         visibility: hidden;
     }
 }
