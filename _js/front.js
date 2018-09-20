@@ -36,7 +36,8 @@
         redvusFrontText = document.querySelector('.section-top__text'),
         frontSkills = document.getElementById('frontSkills'),
         frontSkillsLi = document.querySelectorAll('#frontSkills ul > li'),
-        frontSkillsTitle = document.querySelector('#frontSkills h3')
+        frontSkillsTitle = document.querySelector('#frontSkills h3'),
+        redvusSloganList = $('.skills')
     ;
 
     // function cookieFront() {
@@ -142,6 +143,9 @@
                 // yPercent: "100",
                 autoAlpha: 0,
                 ease: Back.easeInOut
+            })
+            .set(redvusSloganList, {
+                className: "+=hoverlist"
             })
         ;
 
@@ -328,7 +332,10 @@
             redvusAdressLi = $('.shutter-right__adress li')
         ;
 
-        var tl = new TimelineMax({paused:true, reversed:true});
+        var tl = new TimelineMax({
+            paused:true,
+            reversed:true
+        });
 
         tl
             // .set(redvus_shutter_right, {
