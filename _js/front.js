@@ -120,7 +120,7 @@
             //     autoAlpha: 0,
             //     ease: Power1.easeInOut
             // })
-            .from(redvusFrontContent, 0.5, {
+            .from(redvusWrapperContent, 0.5, {
                 // scale: 1.1,
                 // xPercent: "50",
                 autoAlpha: 0,
@@ -173,7 +173,7 @@
         redvus_menu_up = $('#menu_up_line'),
         redvus_menu_down = $('#menu_down_line'),
         redvus_menu_cross = $('#menu_cross')
-        redvusFrontContent = $('.front-content')
+        redvusWrapperContent = $('.wrapper-front__content')
     ;
 
     // var slogan_R = $('#slogan_R'),
@@ -299,29 +299,6 @@
         return tl;
     }
 
-    var redvus_slogan_tl = new TimelineMax();
-
-    // redvus_slogan_tl.from(slogan_visual, 2, {opacity: 0, ease:Power1.easeOut})
-    //     .from(slogan_design, 2, {opacity: 0, ease:Power1.easeOut}, '-=0.5')
-    //     .from(slogan_real, 2, {opacity: 0, ease:Power1.easeOut}, '-=0.5')
-    //     .from(slogan_effective, 2, {opacity: 0, ease:Power1.easeOut}, '-=0.5')
-    //     .from(slogan_unical, 2, {opacity: 0, ease:Power1.easeOut}, '-=0.5')
-    //     .from(slogan_style, 2, {opacity: 0, ase:Power1.easeOut}, '-=0.5')
-    //     // .to(slogan_text, 3, {opacity: 0, ease:Power1.easeOut})
-    //     .to(slogan_visual, 1, {opacity: 0, ease:Back.easeOut})
-    //     .to(slogan_design, 1, {opacity: 0, ease:Back.easeOut})
-    //     .to(slogan_real, 1, {opacity: 0, ease:Back.easeOut})
-    //     .to(slogan_effective, 1, {opacity: 0, ease:Back.easeOut})
-    //     .to(slogan_unical, 1, {opacity: 0, ease:Back.easeOut})
-    //     .to(slogan_style, 1, {opacity: 0, ease:Back.easeOut})
-    //     .from(entrance, 2, {opacity: 0, ease:Back.easeOut});
-        // .to(slogan_R, 1, {opacity: 0, ease:Back.easeOut})
-        // .to(slogan_D, 1, {opacity: 0, ease:Back.easeOut})
-        // .to(slogan_E, 1, {opacity: 0, ease:Back.easeOut})
-        // .to(slogan_U, 1, {opacity: 0, ease:Back.easeOut})
-        // .to(slogan_V, 1, {opacity: 0, ease:Back.easeOut})
-        // .to(slogan_S, 1, {opacity: 0, ease:Back.easeOut});
-
     /*============================
     =            Menu            =
     ============================*/
@@ -350,8 +327,8 @@
                 width: '15%',
                 ease: Power3.easeInOut
             }, '-=0.8')
-            .to(redvusFrontContent, 0.8, {
-                left: '15%',
+            .to(redvusWrapperContent, 0.8, {
+                xPercent: '5',
                 autoAlpha: 0,
                 ease: Power2.easeInOut
             }, '-=0.8')
@@ -527,7 +504,9 @@
 
     function redvusMenuOpenMobile() {
 
-        var redvusMenuLi = $('.cd-navigation li');
+        var redvusMenuLi = $('.cd-navigation li'),
+            redvusAdressLi = $('.shutter-right__adress li')
+        ;
 
         var tl = new TimelineMax({paused:true, reversed:true});
 
@@ -544,7 +523,7 @@
                 height: '30%',
                 ease: Power3.easeInOut
             }, '-=0.8')
-            .to(redvusFrontContent, 0.8, {
+            .to(redvusWrapperContent, 0.8, {
                 bottom: '25%',
                 autoAlpha: 0,
                 ease: Power2.easeInOut
@@ -585,6 +564,11 @@
                 autoAlpha: 0,
                 ease: Back.easeOut
             }, "0.1")
+            .staggerFrom(redvusAdressLi, 0.6, {
+                yPercent: "50%",
+                autoAlpha: 0,
+                ease: Back.easeOut
+            }, "0.1", "-=0.4")
             // .to(redvus_logo, 1.3, {
             //     scale: '0.4',
             //     ease: Back.easeOut

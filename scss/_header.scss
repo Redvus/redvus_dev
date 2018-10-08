@@ -271,15 +271,54 @@
             }
 
             &__nav {
+                width: calc(100% - 4rem);
+                height: calc(100% - 4rem);
                 text-align: center;
+                padding: 2rem;
 
-                ul {
+                nav {
+                    width: 100%;
+                }
+
+                ul.cd-navigation {
+                    display: none;
 
                     li {
                         margin-bottom: 0.5rem;
 
                         a {
-                            font-size: 8vw;
+                            font-size: 12vw;
+                        }
+                    }
+                }
+            }
+
+            &__adress {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                // position: absolute;
+                bottom: 0;
+                margin-top: 3rem;
+
+                li {
+                    width: calc(100% / 4);
+
+                    a {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: $font-size-large + 1;
+
+                        .fa {
+                            margin-right: 0;
+                        }
+
+                        > span {
+                            display: none;
+                            visibility: hidden;
                         }
                     }
                 }
