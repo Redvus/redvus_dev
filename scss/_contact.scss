@@ -1,0 +1,390 @@
+/*===================================
+=            Contact Form            =
+===================================*/
+
+.ajax_form {
+    width: 100%;
+    margin: 0;
+    //margin: 30px 20% 150px 20%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+	&__agreement {
+    	width: 100%;
+    	min-height: 1rem;
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+    	font-size: $font-size-small;
+    	margin-top: 1rem;
+        text-align: center;
+
+    	p {
+    		// margin-left: 1rem;
+    		margin-top: 0.4rem;
+
+    		// a {
+    		// 	// font-family: $bold;
+    		// }
+    	}
+    }
+
+    a {
+        color: $fourth;
+    }
+
+    @include grid-media($XSmall) {
+        margin-bottom: 5rem;
+        display: none;
+        visibility: hidden;
+    }
+}
+
+.input {
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	margin: 0.5rem 0;
+	// max-width: 350px;
+	// width: calc(100% - 2em);
+    vertical-align: top;
+
+    &-half {
+        width: calc(50% - 1rem);
+        margin-right: 1rem;
+
+        &--second {
+            width: calc(50% - 1rem);
+            margin-left: 1rem;
+        }
+    }
+
+    &-full {
+        width: 100%;
+    }
+
+    &__field {
+        position: relative;
+        display: block;
+        border: none;
+        border-radius: 0;
+        background: $fourth;
+        color: $fourth;
+        -webkit-appearance: none; /* for box shadows to show on iOS */
+
+        &:focus {
+            outline: none;
+        }
+
+        &--nao {
+            padding: 1rem 0em 0.5rem;
+            width: 100%;
+            background: transparent;
+            color: $fourth;
+            font-size: $font-size-large;
+        }
+
+        &--file {
+            font-size: $font-size-small;
+        }
+    }
+
+    &__label {
+        // display: inline-block;
+        float: right;
+        padding: 0 1rem;
+        width: 40%;
+        color: $fourth;
+        font-weight: bold;
+        // font-size: 70.25%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-touch-callout: none;
+        user-select: none;
+
+        &-content {
+            position: relative;
+            display: block;
+            padding: 1.6rem 0;
+            width: 100%;
+        }
+
+        &--nao {
+            position: absolute;
+            top: 0.3rem;
+            font-size: $font-size-base;
+            left: 0;
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 0;
+            pointer-events: none;
+            transform-origin: 0 0;
+            transition: transform 0.2s 0.15s, color 1s;
+            transition-timing-function: ease-out;
+        }
+
+        &--file {
+            top: 1.5rem;
+            font-size: $font-size-small;
+        }
+    }
+
+    /* Nao */
+    &--nao {
+        overflow: hidden;
+        padding-top: 1rem;
+    }
+
+    // input[type='file'] {
+    //     background-color: transparent;
+    //     border-right: 0.15rem solid $fourth;
+    // }
+
+    &-button {
+        height: 3rem;
+        margin-top: 3rem;
+
+        &__button {
+            width: 5rem;
+            height: 5rem;
+            display: block;
+            position: absolute;
+            overflow: visible;
+            border: 0.15rem solid $fourth;
+            border-radius: 50%;
+            background-color: $secondary;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            overflow: hidden;
+            transition: background 0.6s;
+
+            &:hover {
+                background-color: darken($secondary, 10%);
+
+                svg {
+                    top: 25%;
+                    left: 75%;
+                    transform: translate(-50%, -50%) scale(0.8);
+                }
+            }
+
+            svg {
+                width: auto;
+                height: 3rem;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: all .6s;
+
+                path {
+                    fill: $fourth;
+                }
+            }
+
+            &--clicked {
+                // background-color: #cff5b3;
+                // border: 2px solid #cff5b3;
+                // color: #6AAA3B;
+                padding-right: 6px;
+                animation: bounce-in .3s;
+                cursor: default;
+
+                svg {
+                    animation: flyaway 1.3s linear;
+                    // top: -80px;
+                    transform: translate(150%, 0);
+
+                    path {
+                        fill: $third;
+                    }
+                }
+            }
+        }
+    }
+
+    @include grid-media($XSmall) {
+        margin: 0.5rem 0;
+
+        &-half {
+            width: 100%;
+
+            &--second {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+
+        &__field {
+
+            &--file {
+                display: none;
+                visibility: hidden;
+            }
+        }
+
+        &-button {
+            margin-top: 2rem;
+        }
+    }
+}
+
+@keyframes flyaway {
+    0% {
+        transform: rotate(10deg);
+        top: 13px;
+        right: 25px;
+        height: 30px;
+    }
+    5% {
+        transform: rotate(10deg);
+        top: 13px;
+        right: 0px;
+        height: 30px;
+    }
+    20% {
+        transform: rotate(-20deg);
+        top: 13px;
+        right: -130px;
+        height: 45px;
+    }
+    40% {
+        transform: rotate(10deg);
+        top: -40px;
+        right: -280px;
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(60deg);
+        top: -200px;
+        right: -1000px;
+        height: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes bounce-in {
+    0% { padding-right: 30px; }
+    40% { padding-right: 6px; }
+    50% { padding-left: 30px; }
+    100% { padding-left: 6px; }
+}
+
+.graphic {
+	position: absolute;
+	top: 0;
+	left: 0;
+    fill: none;
+
+    &--nao {
+        stroke: $fourth;
+        pointer-events: none;
+        transition: transform 0.7s, stroke 0.7s;
+        transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+    }
+}
+
+.icon {
+	color: #ddd;
+	font-size: 150%;
+}
+
+.input__field--nao:focus + .input__label--nao,
+.input--filled .input__label--nao {
+	color: $third;
+	transform: translate3d(0, -1.3rem, 0) scale3d(0.8, 0.8, 1);
+}
+
+.input__field--nao:focus ~ .graphic--nao,
+.input--filled .graphic--nao {
+	stroke: $third;
+	transform: translate3d(-66.6%, 0, 0);
+}
+
+/*----------  File Attach  ----------*/
+// .input {
+
+//     &-file {
+
+//         &-container {
+//             position: relative;
+//             width: 225px;
+//         }
+
+//         &-trigger {
+//             cursor: pointer;
+//         }
+//     }
+// }
+
+// .js {
+
+//     .input {
+
+//         &-file {
+//             position: absolute;
+//             top: 0; left: 0;
+//             width: 225px;
+//             opacity: 0;
+//             padding: 14px 0;
+//             cursor: pointer;
+
+//             &-trigger {
+//                 display: block;
+//                 // padding: 14px 45px;
+//                 // background: $fourth;
+//                 color: $fourth;
+//                 font-size: $font-size-base;
+//                 text-align: left;
+//                 transition: all .4s;
+//                 cursor: pointer;
+//             }
+//         }
+//     }
+
+//     .file-return {
+//         color: $fourth;
+
+//         // &:not(:empty):before {
+//         //     content: "Прикрепленный файл: ";
+//         //     font-style: normal;
+//         //     font-weight: normal;
+//         // }
+//     }
+// }
+
+// // .js .input-file:hover + .input-file-trigger,
+// // .js .input-file:focus + .input-file-trigger,
+// // .js .input-file-trigger:hover,
+// // .js .input-file-trigger:focus {
+// //     background: $third;
+// //     color: $fourth;
+// // }
+
+// .file-return {
+//     margin : 0;
+
+//     &:not(:empty) {
+//         margin: 1em 0;
+//     }
+// }
+
+.g-recaptcha{
+    transform: scale(0.87);
+    transform-origin: 0px 0px 0px;
+}
+
+.error_name {
+    width: 100%;
+    height: 2rem;
+    display: block;
+    position: absolute;
+    color: $third;
+    font-size: $font-size-small;
+}
+
+/*=====  End of Conact Form  ======*/

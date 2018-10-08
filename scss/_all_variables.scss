@@ -7,8 +7,8 @@ $secondary     : #ff643c; // Оранжевый #ff671b
 $third         : #201011; // Темный var1: #1E252B
 $fourth        : #fff;
 
-// $action-color:      $second
-
+$error       :   $third;
+$success     :   $fourth;
 
 $border_1:  1px solid $primary;
 $border_2:  2px solid $primary;
@@ -26,6 +26,8 @@ $menuLiColorHover        : $secondary;
 /*----------  Layout  ----------*/
 $layoutBackground        : $secondary;
 $layoutShutterBackground : $secondary;
+$layoutInfoWidth         : 50%;
+$layoutContactWidth      : 50%;
 
 $projectFirst  : #323E48;
 $projectSecond : #000;
@@ -105,14 +107,14 @@ $HSmall: (
 =            Fonts            =
 =============================*/
 
-@include font-face (
-    "fontawesome-webfont",
-    "fonts/fontawesome-webfont/fontawesome-webfont",
-    ("eot", "woff", "ttf", "svg")
-    ) {
-    font-style: normal;
-    font-weight: 400;
-}
+// @include font-face (
+//     "fontawesome-webfont",
+//     "fonts/fontawesome-webfont/fontawesome-webfont",
+//     ("eot", "woff", "ttf", "svg")
+//     ) {
+//     font-style: normal;
+//     font-weight: 400;
+// }
 
 @include font-face (
     "PF DinText Pro",
@@ -158,7 +160,7 @@ $heading-font-cond   : "PF Din Text Comp Pro Medium";
 $heading-font-bold   : 'Oswald', sans-serif;
 $subheading-font     : 'Montserrat', sans-serif;
 
-$body-font-color     : $primary;
+$body-font-color     : $third;
 
 $body-font-size      : 1rem !default;
 $body-font-weight    : normal !default;
@@ -306,6 +308,10 @@ a {
     // &:hover {
     //     //color: $action-color;
     // }
+}
+
+button {
+    outline: none;
 }
 
 svg {
