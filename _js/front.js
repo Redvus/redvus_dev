@@ -1,28 +1,5 @@
 ;(function ($) {
 
-    /*=====================================
-    =            Smooth Scroll            =
-    =====================================*/
-
-    // var Scrollbar = window.Scrollbar;
-    // Scrollbar.init(document.getElementById('main-scrollbar'), {
-    //     speed: 1,
-    //     // overscrollEffectColor: ''
-    // });
-
-    function scrollbarAllSmooth() {
-        $('body').niceScroll({
-            cursorcolor:"#ffffff",
-            cursorwidth: "5px",
-            // cursorborder: "1px solid #fff",
-            scrollspeed: 80,
-            mousescrollstep: 10,
-            zindex: 9999
-        });
-    }
-
-    /*=====  End of Smooth Scroll  ======*/
-
     //First Slogan
     var redvusSloganNe = document.getElementById('ne'),
         redvusSloganAsItSeems = document.getElementById('as_it_seems'),
@@ -37,23 +14,8 @@
         frontSkills = document.getElementById('frontSkills'),
         frontSkillsLi = document.querySelectorAll('#frontSkills ul > li'),
         frontSkillsTitle = document.querySelector('#frontSkills h3'),
-        redvusSloganList = $('.skills')
+        redvusSloganList = document.querySelector('.skills')
     ;
-
-    // function cookieFront() {
-
-    //     if (!$.cookie('was')) {
-
-    //         permissionBlock.removeClass('permission-hidden');
-
-    //     }
-
-    //     $.cookie('was', true, {
-    //         expires: 7,
-    //         path: '/'
-    //     });
-
-    // }
 
     function redvusFirstSlogan() {
 
@@ -153,44 +115,28 @@
     }
 
     // Animation logo on first page
-    var redvus_logo_v_pencil = $('#redvus_logo_v_pencil'),
-        redvus_logo_line_v = $('#redvus_logo_line_v'),
-        redvus_logo_r = $('#redvus_logo_r'),
-        redvus_logo_e_up = $('#redvus_logo_e_up'),
-        redvus_logo_e_middle = $('#redvus_logo_e_middle'),
-        redvus_logo_e_down = $('#redvus_logo_e_down'),
-        redvus_logo_d = $('#redvus_logo_d'),
-        redvus_logo_u_end = $('#redvus_logo_u_end'),
-        redvus_logo_s_end = $('#redvus_logo_s_end'),
-        redvus_logo_studio = $('#redvus_logo_studio'),
-        redvus_logo = $('#redvus_logo'),
-        redvus_shutter_left = $('.shutter-left'),
-        redvus_shutter_right = $('.shutter-right'),
-        redvus_menu = $('#menu'),
-        redvus_menu_v = $('#menu_v'),
-        redvus_menu_left = $('#menu_left_line'),
-        redvus_menu_right = $('#menu_right_line'),
-        redvus_menu_up = $('#menu_up_line'),
-        redvus_menu_down = $('#menu_down_line'),
-        redvus_menu_cross = $('#menu_cross')
-        redvusWrapperContent = $('.wrapper-front__content')
+    var redvus_logo_v_pencil = document.getElementById('redvus_logo_v_pencil'),
+        redvus_logo_line_v = document.getElementById('redvus_logo_line_v'),
+        redvus_logo_r = document.getElementById('redvus_logo_r'),
+        redvus_logo_e_up = document.getElementById('redvus_logo_e_up'),
+        redvus_logo_e_middle = document.getElementById('redvus_logo_e_middle'),
+        redvus_logo_e_down = document.getElementById('redvus_logo_e_down'),
+        redvus_logo_d = document.getElementById('redvus_logo_d'),
+        redvus_logo_u_end = document.getElementById('redvus_logo_u_end'),
+        redvus_logo_s_end = document.getElementById('redvus_logo_s_end'),
+        redvus_logo_studio = document.getElementById('redvus_logo_studio'),
+        redvus_logo = document.getElementById('redvus_logo'),
+        redvus_shutter_left = document.querySelector('.shutter-left'),
+        redvus_shutter_right = document.querySelector('.shutter-right'),
+        redvus_menu = document.getElementById('menu'),
+        redvus_menu_v = document.getElementById('menu_v'),
+        redvus_menu_left = document.getElementById('menu_left_line'),
+        redvus_menu_right = document.getElementById('menu_right_line'),
+        redvus_menu_up = document.getElementById('menu_up_line'),
+        redvus_menu_down = document.getElementById('menu_down_line'),
+        redvus_menu_cross = document.getElementById('menu_cross')
+        redvusWrapperContent = document.querySelector('.wrapper-front__content')
     ;
-
-    // var slogan_R = $('#slogan_R'),
-    //     slogan_real = $('#slogan_real'),
-    //     slogan_E = $('#slogan_E'),
-    //     slogan_effecive = $('#slogan_effective'),
-    //     slogan_D = $('#slogan_D'),
-    //     slogan_design = $('#slogan_design'),
-    //     slogan_V = $('#slogan_V'),
-    //     slogan_visual = $('#slogan_visual'),
-    //     slogan_U = $('#slogan_U'),
-    //     slogan_unical = $('#slogan_unical'),
-    //     slogan_S = $('#slogan_S'),
-    //     slogan_style = $('#slogan_style'),
-    //     slogan_text = $('.slogan-text'),
-    //     entrance = $('.entrance')
-    // ;
 
     function redvusLogoStart() {
 
@@ -305,8 +251,8 @@
 
     function redvusMenuOpen() {
 
-        var redvusMenuLi = $('.cd-navigation li'),
-            redvusAdressLi = $('.shutter-right__adress li')
+        var redvusMenuLi = document.querySelectorAll('.cd-navigation li'),
+            redvusAdressLi = document.querySelectorAll('.shutter-right__adress li')
         ;
 
         var tl = new TimelineMax({
@@ -367,33 +313,35 @@
                 xPercent: "50%",
                 autoAlpha: 0,
                 ease: Back.easeOut
-            }, "0.1")
+            }, "0.07", "-=0.2")
             .staggerFrom(redvusAdressLi, 0.6, {
                 xPercent: "50%",
                 autoAlpha: 0,
                 ease: Back.easeOut
-            }, "0.1", "-=0.4")
+            }, "0.07", "-=0.4")
             // .to(redvus_logo, 1.3, {
             //     scale: '0.4',
             //     ease: Back.easeOut
             // }, '-=1.3')
         ;
 
-        redvus_menu.on('click', function () {
+        redvus_menu.onclick = function () {
             tl.reversed() ? tl.restart() : tl.reverse(-0.3);
-        });
+        };
+
+        return tl;
     }
 
-    redvus_menu.hover(function () {
+    redvus_menu.onmouseover = function () {
         TweenMax.to(this, 0.4, {
             scale: 1.1,
             ease: Elastic.easeOut.config(0.9, 0.4)
         });
-    }, function () {
+    }, redvus_menu.onmouseleave = function () {
         TweenMax.to(this, 0.2, {
             scale: 1
         });
-    });
+    };
 
     /*=====  End of Menu  ======*/
 
@@ -504,11 +452,14 @@
 
     function redvusMenuOpenMobile() {
 
-        var redvusMenuLi = $('.cd-navigation li'),
-            redvusAdressLi = $('.shutter-right__adress li')
+        var redvusMenuLi = document.querySelectorAll('.cd-navigation li'),
+            redvusAdressLi = document.querySelectorAll('.shutter-right__adress li')
         ;
 
-        var tl = new TimelineMax({paused:true, reversed:true});
+        var tl = new TimelineMax({
+            paused:true,
+            reversed:true
+        });
 
         tl
             // .set(redvus_shutter_right, {
@@ -575,21 +526,23 @@
             // }, '-=1.3')
         ;
 
-        redvus_menu.on('click', function () {
+        redvus_menu.onclick = function () {
             tl.reversed() ? tl.restart() : tl.reverse(-0.3);
-        });
+        };
+
+        return tl;
     }
 
-    redvus_menu.hover(function () {
-        TweenMax.to(this, 0.4, {
-            scale: 1.1,
-            ease: Elastic.easeOut.config(0.9, 0.4)
-        });
-    }, function () {
-        TweenMax.to(this, 0.2, {
-            scale: 1
-        });
-    });
+    // redvus_menu.hover(function () {
+    //     TweenMax.to(this, 0.4, {
+    //         scale: 1.1,
+    //         ease: Elastic.easeOut.config(0.9, 0.4)
+    //     });
+    // }, function () {
+    //     TweenMax.to(this, 0.2, {
+    //         scale: 1
+    //     });
+    // });
 
     /*=====  End of Menu Mobile  ======*/
 
@@ -697,7 +650,9 @@
 
     /*----------  First Section  ----------*/
     function sectionFirstScroll() {
+
         var tl = new TimelineMax();
+
         tl
             .to(frontSkills, 0.5, {
                 // backgroundColor: "#cccccc",
@@ -803,11 +758,11 @@
     function sectionSecondScroll() {
         var tl = new TimelineMax();
         tl
-            // .to([sectionFirstText, sectionFirstImage, sectionFirstDescription], 0.5, {
-            //     autoAlpha: 0,
-            //     // display: 'n_25',
-            //     ease: Power0.easeNone
-            // })
+            .to(sectionFirst, 0.5, {
+                autoAlpha: 0,
+                // display: 'n_25',
+                ease: Power0.easeNone
+            })
             .to(sectionSecondTitle, 1, {
                 yPercent: "-150%",
                 // color: "#201011",
@@ -906,7 +861,6 @@
     /*=====  End of Bottom Section  ======*/
 
     function init() {
-        scrollbarAllSmooth();
 
         redvusLogoStart();
         redvusMenuOpen();

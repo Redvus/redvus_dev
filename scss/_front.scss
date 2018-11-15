@@ -292,7 +292,7 @@
             left: 50%;
             // top: -30%;
             transform: translateX(-50%);
-            transition: all 0.8s;
+            transition: all 0.4s;
             opacity: 0;
             z-index: 3;
 
@@ -305,15 +305,16 @@
                 background-color: $fourth;
                 top: 100%;
                 left: 0;
-                transform: scaleX(0);
+                // transform: scaleX(0);
                 transform-origin: left;
-                animation: link-project 2s infinite;
+                // animation: link-project 2s infinite;
             }
 
             &:hover {
+                letter-spacing: 0.15rem;
 
                 &:before {
-                    animation: none;
+                    // animation: none;
                     transform: scaleX(1);
                 }
             }
