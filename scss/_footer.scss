@@ -12,10 +12,11 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    position: fixed;
     bottom: 0;
     left: 0;
-    background-color: $secondary;
+    // background-color: $secondary;
+    z-index: 9990;
 
     p {
         font-size: $font-size-small;

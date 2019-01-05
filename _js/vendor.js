@@ -36,6 +36,6 @@
         });
     }
 
-    scrollbarAllSmooth();
+    // scrollbarAllSmooth();
 
 }(jQuery));

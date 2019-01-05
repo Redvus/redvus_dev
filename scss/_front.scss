@@ -3,17 +3,28 @@
 =====================================*/
 
 .section {
-    width: 100%;
+    width: calc(100% - (#{$shutterWidth} * 2));
+    height: 100vh;
     // display: flex;
     // flex-direction: column;
     // align-items: center;
     // justify-content: center;
     position: relative;
     z-index: 0;
-    transition: background 1s;
+    padding: 0 $shutterWidth;
+    // transition: background 1s;
+
+    &-container {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        overflow: hidden;
+    }
 
     &-top {
-        height: 100vh;
+
         // display: flex;
         // align-items: center;
         // justify-content: center;
@@ -235,7 +246,7 @@
         position: absolute;
         // transition: all 0.4s;
         // cursor: pointer;
-        opacity: 0;
+        // opacity: 0;
         transition: 0.8s all;
         // transform: translateY(150%);
 
@@ -246,36 +257,35 @@
     }
 
     &-project {
-        height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
 
         &__text {
             width: 100%;
-            min-height: 10vh;
+            // min-height: 10vh;
             display: block;
             position: absolute;
             // left: 50%;
-            top: 50%;
-            // transform: translate(-50%, -50%);
+            // top: 50%;
+            // transform: translate(0, -100%);
             z-index: 2;
 
             h2 {
                 width: 100%;
                 font: {
                     family: $heading-font-bold;
-                    size: 15vw;
+                    size: 12vw;
                 };
                 line-height: 1;
                 color: $projectTitleColor;
                 // -webkit-text-stroke: 0.15rem $sectionTitleColor;
                 text-align: center;
-                position: absolute;
-                margin: 0;
-                left: 0;
-                top: 220%;
-                // transform: translate(-50%, -50%);
+                // position: absolute;
+                margin: -1.2rem 0 0;
+                // left: 0;
+                // top: 50%;
+                // transform: translate(0, -50%);
                 // opacity: 0;
             }
         }
@@ -289,11 +299,12 @@
             color: $projectTextColor;
             position: absolute;
             margin: 0;
-            left: 50%;
+            // left: 50%;
             // top: -30%;
-            transform: translateX(-50%);
-            transition: all 0.4s;
-            opacity: 0;
+            // transform: translateX(-50%);
+            text-align: center;
+            // transition: all 0.4s;
+            // opacity: 0;
             z-index: 3;
 
             &:before {
@@ -311,7 +322,7 @@
             }
 
             &:hover {
-                letter-spacing: 0.15rem;
+                // letter-spacing: 0.15rem;
 
                 &:before {
                     // animation: none;
@@ -325,12 +336,12 @@
             // height: 20rem;
             display: block;
             // left: 50%;
-            top: 130%;
+            // top: 130%;
             position: absolute;
             // transform: translate(-50%, -50%);
             // background-color: #ccc;
             z-index: 1;
-            opacity: 0;
+            // opacity: 0;
 
             img {
                 width: 100%;

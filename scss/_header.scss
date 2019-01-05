@@ -20,7 +20,7 @@
         // transition: background 0.8s;
 
         #redvus_logo {
-            width: 18rem;
+            width: 55%;
             height: auto;
             opacity: 0;
             // animation: fadeIn 2s;
@@ -78,6 +78,7 @@
             cursor: pointer;
             position: absolute;
             opacity: 0;
+            transform: translateX(-100%);
             // transform-origin: 50% 50%;
 
             &_v {

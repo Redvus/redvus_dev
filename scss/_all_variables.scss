@@ -22,9 +22,11 @@ $logoColorLight          : $third;
 $logoColorDark           : $fourth;
 $menuLiColor             : $fourth;
 $menuLiColorHover        : $secondary;
+$navActiveColor          : $fourth;
+$navHoverColor           : $third;
 
 /*----------  Layout  ----------*/
-$layoutBackground        : $secondary;
+$layoutBackground        : $third;
 $layoutShutterBackground : $secondary;
 $layoutInfoWidth         : 50%;
 $layoutContactWidth      : 50%;
@@ -35,7 +37,7 @@ $layoutBackgroundFirst   : lighten($projectFirst, 15%);
 $layoutBackgroundSecond  : lighten($projectSecond, 40%);
 
 $contentLeft             : 0;
-$shutterWidth            : 50%;
+$shutterWidth            : 15%;
 $sectionTitleColor       : $fourth;
 
 //Layout Mobile
@@ -45,7 +47,7 @@ $shutterWidthMobile      : 100%;
 $sloganColorLight        : $fourth;
 $sloganColorDark         : $third;
 $skillsLiColor           : $third;
-$skillsLiColorHover      : lighten($layoutBackground, 10%);
+$skillsLiColorHover      : lighten($secondary, 10%);
 $skillsTextColor         : $fourth;
 
 /*----------  Project  ----------*/
