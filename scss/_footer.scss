@@ -7,28 +7,44 @@ $footer-grid: (
 );
 
 footer {
-    width: 100%;
-    min-height: 2rem;
+    width: 100vh;
+    height: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     position: fixed;
-    bottom: 0;
-    left: 0;
+    // bottom: 0;
+    // left: 0;
     // background-color: $secondary;
     z-index: 9990;
+    transform-origin: 0 0;
+    transform: rotate(-90deg);
 
-    p {
-        font-size: $font-size-small;
+    span {
+        font-family: $heading-font-bold;
+        font-size: $font-size-small - 0.2;
+        font-weight: 400;
+        letter-spacing: 0.05rem;
         color: $third;
     }
 
     @include grid-media($Small) {
         width: calc(100% - 2rem);
-        padding: 0 1rem;
+        height: auto;
+        min-height: 2rem;
+        padding: 1rem 1rem 3rem;
         text-align: center;
         line-height: 1;
-        bottom: 60px;
+        bottom: 0;
+        position: relative;
+        background-color: $secondary;
+        transform: rotate(0);
+
+        span {
+            font-size: $font-size-small;
+            letter-spacing: normal;
+            line-height: 1.4;
+        }
     }
 }
 

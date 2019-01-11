@@ -7,7 +7,7 @@ var _loading_spinner = setInterval(function () {
         var $page_loading = document.getElementById('page_loading'),
             $body = document.body || document.getElementsByTagName('body')[0],
             speed = 600,
-            delay = 400,
+            delay = 600,
             $backColor = '#ffffff',
             $loadAnimation = '0'
             ;

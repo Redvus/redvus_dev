@@ -83,7 +83,36 @@
         }
     }
 
-    @media (max-width: $mobile) {
+    &__title {
+        width: 2rem;
+        min-height: 2rem;
+        display: flex;
+        justify-content: center;
+
+        span {
+            font-family: $heading-font-bold;
+            font-size: $font-size-small;
+            font-weight: 400;
+            letter-spacing: 0.1rem;
+            color: $fourth;
+            text-transform: uppercase;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+            margin-left: -0.3rem;
+        }
+
+        &--top {
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        &--bottom {
+            align-items: flex-end;
+            margin-top: 1rem;
+        }
+    }
+
+    @include grid-media($Small) {
         visibility: hidden;
         display: none;
     }

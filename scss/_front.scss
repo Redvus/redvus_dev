@@ -24,7 +24,7 @@
     }
 
     &-top {
-
+        background-color: $secondary;
         // display: flex;
         // align-items: center;
         // justify-content: center;
@@ -97,7 +97,7 @@
                             size: 13vw;
                         };
                         line-height: 0.9;
-                        color: darken($secondary, 10%);
+                        color: $skillsLiColor;
                         // -webkit-text-stroke: 0.2rem $skillsLiColor;
                         margin: 0;
                         transition: all 0.6s;
@@ -139,14 +139,14 @@
                     z-index: 6;
 
                     ul {
-                        opacity: 0;
+                        // opacity: 0;
                         transition: all 0.4s;
 
                         li {
                             display: inline-block;
                             font: {
                                 family: $subheading-font;
-                                size: 1.7vw;
+                                size: 1vw;
                                 weight: 600;
                             };
                             color: $skillsTextColor;
@@ -181,12 +181,16 @@
 
                     li {
                         position: relative;
-                        margin-bottom: 1rem;
+                        margin-bottom: 1.2rem;
 
                         h4 {
                             font-size: 20vw;
-                            color: $sloganColorLight;
+                            color: $skillsLiColor;
                             // opacity: 0.4;
+                        }
+
+                        &:last-child {
+                            margin-bottom: 0;
                         }
 
                         // &:hover {
@@ -209,17 +213,17 @@
 
                     .list-line {
                         // position: relative;
-                        top: 35%;
+                        top: 50%;
                         // left: 0;
                         // transform: translate(0, 0);
-                        display: none;
-                        visibility: hidden;
+                        // display: none;
+                        // visibility: hidden;
 
                         ul {
                             opacity: 1;
 
                             li {
-                                font-size: 4vw;
+                                font-size: 3vw;
                                 letter-spacing: 0;
                                 margin: 0 0.15rem;
                             }
@@ -424,7 +428,17 @@
         }
     }
 
+    &-mobile {
+        display: none;
+        visibility: hidden;
+    }
+
     @include grid-media($Small) {
+
+        &-container {
+            position: inherit;
+            overflow: auto;
+        }
 
         &-title {
             font-size: 7vw;
@@ -432,6 +446,8 @@
         }
 
         &-project {
+            display: none;
+            visibility: hidden;
 
             &__text {
                 top: 45%;
@@ -473,6 +489,32 @@
                     }
                 }
             }
+        }
+
+        &-mobile {
+            width: calc(100% - 2rem);
+            min-height: 100vh;
+            display: block;
+            visibility: visible;
+            padding: 3rem 1rem;
+            background-color: $secondary;
+
+            &__link {
+                width: 100%;
+                min-height: 1rem;
+                // margin-bottom: 1rem;
+                text-align: center;
+
+                a {
+                    font: {
+                        family: $heading-font-bold;
+                        size: 13vw;
+                    };
+                    text-transform: uppercase;
+                    color: $projectTitleColorMobile;
+                }
+            }
+
         }
     }
 }

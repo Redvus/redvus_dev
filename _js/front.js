@@ -247,7 +247,7 @@ redvus_menu.on("mouseover", function () {
 function redvusLogoStartMobile() {
 
     var tl = new TimelineMax({
-        onComplete: redvusFirstSlogan()
+        // onComplete: redvusLogoStart()
     });
 
     tl
@@ -300,20 +300,20 @@ function redvusLogoStartMobile() {
             y: 100,
             ease: Back.easeOut
         }, 0.1)
-        .to(redvus_logo, 1, {
-            scale: '0.4',
-            ease: Power3.easeOut
-        })
-        .to(redvus_shutter_left, 2, {
-            height: '60px',
-            // backgroundColor: "transparent",
-            ease: Power3.easeOut
-        }, '-=1')
-        .to(redvus_shutter_right, 2, {
-            height: '60px',
-            // backgroundColor: "transparent",
-            ease: Power3.easeOut
-        }, '-=2')
+        // .to(redvus_logo, 1, {
+        //     scale: '0.4',
+        //     ease: Power3.easeOut
+        // })
+        // .to(redvus_shutter_left, 2, {
+        //     height: '60px',
+        //     // backgroundColor: "transparent",
+        //     ease: Power3.easeOut
+        // }, '-=1')
+        // .to(redvus_shutter_right, 2, {
+        //     height: '60px',
+        //     // backgroundColor: "transparent",
+        //     ease: Power3.easeOut
+        // }, '-=2')
         .to(redvus_menu, 0.5, {
             autoAlpha: 1,
             ease: Power0.easeIn
@@ -340,8 +340,8 @@ function redvusLogoStartMobile() {
 
 function redvusMenuOpenMobile() {
 
-    var redvusMenuLi = document.querySelectorAll('.cd-navigation li'),
-        redvusAdressLi = document.querySelectorAll('.shutter-right__adress li');
+    var redvusMenuLi = $('.cd-navigation li'),
+        redvusAdressLi = $('.shutter-right__adress li');
 
     var tl = new TimelineMax({
         paused: true,
@@ -372,10 +372,10 @@ function redvusMenuOpenMobile() {
             rotation: '-405',
             ease: Back.easeInOut
         }, '-=0.8')
-        .to([redvus_menu_left, redvus_menu_right], 0.6, {
-            // stroke: '#fff',
-            ease: Power1.easeOut
-        }, '-=0.6')
+        // .to([redvus_menu_left, redvus_menu_right], 0.6, {
+        //     // stroke: '#fff',
+        //     ease: Power1.easeOut
+        // }, '-=0.6')
         .to(redvus_menu_v, 0.6, {
             y: '-100',
             autoAlpha: 0,
@@ -499,11 +499,13 @@ function fullHeightScroll() {
     var currentIndex = 0;
 
     /*----------  Intro  ----------*/
-    var sectionFirstArrowDown = $('.arrow-down'),
+    var sectionFirstArrowDown = $('.mouse'),
         frontSkillsLi = $('#frontSkills ul > li'),
+        frontSkillsLine = $('#frontSkills > .list-line'),
         redvusSloganList = $('.skills'),
         section_0 = $('#section_0'),
-        redvusNavSection = $('#redvusNavSection')
+        redvusNavSection = $('#redvusNavSection'),
+        footerLoad = $('footer')
     ;
 
     var tl0 = new TimelineMax({
@@ -511,11 +513,17 @@ function fullHeightScroll() {
             // onComplete: introVivusAnimation,
             paused: true
         })
-        .set(section_0, {
-            backgroundColor: "#ff643c"
-        })
+        // .set(section_0, {
+        //     backgroundColor: "#ff643c"
+        // })
         .staggerFrom(frontSkillsLi, 2, {
-            scale: 0.9,
+            yPercent: -5,
+            // yPercent: "20",
+            autoAlpha: 0,
+            ease: Power4.easeOut
+        }, "0.15")
+        .staggerFrom(frontSkillsLine, 1, {
+            yPercent: -5,
             // yPercent: "20",
             autoAlpha: 0,
             ease: Power4.easeOut
@@ -525,15 +533,15 @@ function fullHeightScroll() {
             autoAlpha: 0,
             ease: Power1.easeInOut
         }, "-=1")
-        .from(sectionFirstArrowDown, 0.6, {
+        .from([sectionFirstArrowDown, footerLoad], 0.6, {
             // scale: 1.1,
             // yPercent: "100",
             autoAlpha: 0,
             ease: Power1.easeInOut
         }, "-=0.6")
-        .set(redvusSloganList, {
-            className: "+=hoverlist"
-        })
+        // .set(redvusSloganList, {
+        //     className: "+=hoverlist"
+        // })
         .reverse(false);
 
     /*----------  Section 1 БигБенКлуб  ----------*/

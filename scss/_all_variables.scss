@@ -42,18 +42,19 @@ $sectionTitleColor       : $fourth;
 
 //Layout Mobile
 $shutterWidthMobile      : 100%;
+$shutterHeightMobile     : 3rem;
 
 /*----------  Slogan & Skills  ----------*/
 $sloganColorLight        : $fourth;
 $sloganColorDark         : $third;
-$skillsLiColor           : $third;
+$skillsLiColor           : darken($secondary, 10%);
 $skillsLiColorHover      : lighten($secondary, 10%);
 $skillsTextColor         : $fourth;
 
 /*----------  Project  ----------*/
 $projectTitleColor       : rgba($fourth, 0.3);
 $projectTextColor        : $fourth;
-$projectTitleColorMobile : rgba($fourth, 0.6);
+$projectTitleColorMobile : $fourth;
 
 /*=====  End of Variable  ======*/
 
