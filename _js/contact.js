@@ -5,7 +5,7 @@
 =======================================*/
 
 //First Slogan
-var redvusWrapperContent = $('.wrapper-contact__content'),
+const redvusWrapperContactContent = $('.wrapper-contact__content'),
     redvusFormInput = $('.input'),
     redvusFormAgreement = $('.ajax_form__agreement'),
     redvusContactFooter = $('footer p')
@@ -13,7 +13,7 @@ var redvusWrapperContent = $('.wrapper-contact__content'),
 
 function redvusContactActivate() {
 
-    var tl = new TimelineMax({ delay: "4" });
+    let tl = new TimelineMax({ delay: "1" });
 
     tl
         // .from(redvusWrapperContent, 2, {
@@ -48,33 +48,34 @@ function redvusContactActivate() {
 /*=====  End of Contact content  ======*/
 
 // Animation logo on first page
-var redvus_logo_v_pencil = document.getElementById('redvus_logo_v_pencil'),
-    redvus_logo_line_v = document.getElementById('redvus_logo_line_v'),
-    redvus_logo_r = document.getElementById('redvus_logo_r'),
-    redvus_logo_e_up = document.getElementById('redvus_logo_e_up'),
-    redvus_logo_e_middle = document.getElementById('redvus_logo_e_middle'),
-    redvus_logo_e_down = document.getElementById('redvus_logo_e_down'),
-    redvus_logo_d = document.getElementById('redvus_logo_d'),
-    redvus_logo_u_end = document.getElementById('redvus_logo_u_end'),
-    redvus_logo_s_end = document.getElementById('redvus_logo_s_end'),
-    redvus_logo_studio = document.getElementById('redvus_logo_studio'),
-    redvus_logo = document.getElementById('redvus_logo'),
-    redvus_shutter_left = document.querySelector('.shutter-left'),
-    redvus_shutter_right = document.querySelector('.shutter-right'),
-    redvus_menu = document.getElementById('menu'),
-    redvus_menu_v = document.getElementById('menu_v'),
-    redvus_menu_left = document.getElementById('menu_left_line'),
-    redvus_menu_right = document.getElementById('menu_right_line'),
-    redvus_menu_up = document.getElementById('menu_up_line'),
-    redvus_menu_down = document.getElementById('menu_down_line'),
-    redvus_menu_cross = document.getElementById('menu_cross')
-redvusWrapperContent = document.querySelector('.section-container');
+const redvus_logo_v_pencil = $('#redvus_logo_v_pencil'),
+    redvus_logo_line_v = $('#redvus_logo_line_v'),
+    redvus_logo_r = $('#redvus_logo_r'),
+    redvus_logo_e_up = $('#redvus_logo_e_up'),
+    redvus_logo_e_middle = $('#redvus_logo_e_middle'),
+    redvus_logo_e_down = $('#redvus_logo_e_down'),
+    redvus_logo_d = $('#redvus_logo_d'),
+    redvus_logo_u_end = $('#redvus_logo_u_end'),
+    redvus_logo_s_end = $('#redvus_logo_s_end'),
+    redvus_logo_studio = $('#redvus_logo_studio'),
+    redvus_logo = $('#redvus_logo'),
+    redvus_shutter_left = $('.shutter-left'),
+    redvus_shutter_right = $('.shutter-right'),
+    redvus_menu = $('#menu'),
+    redvus_menu_v = $('#menu_v'),
+    redvus_menu_left = $('#menu_left_line'),
+    redvus_menu_right = $('#menu_right_line'),
+    redvus_menu_up = $('#menu_up_line'),
+    redvus_menu_down = $('#menu_down_line'),
+    redvus_menu_cross = $('#menu_cross'),
+    redvusWrapperContent = $('.section-container')
+;
 
 function redvusLogoStart() {
 
-    var tl = new TimelineMax({
+    let tl = new TimelineMax({
         onComplete: redvusContactActivate(),
-        delay: 0.6
+        delay: 1
     });
 
     tl
@@ -183,11 +184,11 @@ function redvusLogoStart() {
 
 function redvusMenuOpen() {
 
-    var redvusMenuLi = document.querySelectorAll('.cd-navigation li'),
-        redvusAdressLi = document.querySelectorAll('.shutter-right__adress li'),
-        redvusNavSection = document.getElementById('redvusNavSection');
+    const redvusMenuLi = $('.cd-navigation li'),
+        redvusAdressLi = $('.shutter-right__adress li'),
+        redvusNavSection = $('#redvusNavSection');
 
-    var tl = new TimelineMax({
+    let tl = new TimelineMax({
         paused: true,
         reversed: true
     });
@@ -258,23 +259,24 @@ function redvusMenuOpen() {
     // }, '-=1.3')
     ;
 
-    redvus_menu.onclick = function () {
+    /*jshint -W030 */
+    redvus_menu.on('click', function () {
         tl.reversed() ? tl.restart() : tl.reverse(-0.3);
-    };
+    });
 
     return tl;
 }
 
-redvus_menu.onmouseover = function () {
+redvus_menu.on("mouseover", function() {
     TweenMax.to(this, 0.4, {
         scale: 1.1,
         ease: Elastic.easeOut.config(0.9, 0.4)
     });
-}, redvus_menu.onmouseleave = function () {
+}), /*jshint -W030 */redvus_menu.on("mouseleave", function() {
     TweenMax.to(this, 0.2, {
         scale: 1
     });
-};
+});
 
 /*=====  End of Menu  ======*/
 
@@ -284,8 +286,9 @@ redvus_menu.onmouseover = function () {
 
 function redvusLogoStartMobile() {
 
-    var tl = new TimelineMax({
-        onComplete: redvusFirstSlogan()
+    let tl = new TimelineMax({
+        // onComplete: redvusContactActivate(),
+        // delay: 1
     });
 
     tl
@@ -338,20 +341,20 @@ function redvusLogoStartMobile() {
             y: 100,
             ease: Back.easeOut
         }, 0.1)
-        .to(redvus_logo, 1, {
-            scale: '0.4',
-            ease: Power3.easeOut
-        })
-        .to(redvus_shutter_left, 2, {
-            height: '60px',
-            // backgroundColor: "transparent",
-            ease: Power3.easeOut
-        }, '-=1')
-        .to(redvus_shutter_right, 2, {
-            height: '60px',
-            // backgroundColor: "transparent",
-            ease: Power3.easeOut
-        }, '-=2')
+        // .to(redvus_logo, 1, {
+        //     scale: '0.4',
+        //     ease: Power3.easeOut
+        // })
+        // .to(redvus_shutter_left, 2, {
+        //     height: '60px',
+        //     // backgroundColor: "transparent",
+        //     ease: Power3.easeOut
+        // }, '-=1')
+        // .to(redvus_shutter_right, 2, {
+        //     height: '60px',
+        //     // backgroundColor: "transparent",
+        //     ease: Power3.easeOut
+        // }, '-=2')
         .to(redvus_menu, 0.5, {
             autoAlpha: 1,
             ease: Power0.easeIn
@@ -378,10 +381,10 @@ function redvusLogoStartMobile() {
 
 function redvusMenuOpenMobile() {
 
-    var redvusMenuLi = document.querySelectorAll('.cd-navigation li'),
-        redvusAdressLi = document.querySelectorAll('.shutter-right__adress li');
+    const redvusMenuLi = $('.cd-navigation li'),
+        redvusAdressLi = $('.shutter-right__adress li');
 
-    var tl = new TimelineMax({
+    let tl = new TimelineMax({
         paused: true,
         reversed: true
     });
@@ -410,10 +413,10 @@ function redvusMenuOpenMobile() {
             rotation: '-405',
             ease: Back.easeInOut
         }, '-=0.8')
-        .to([redvus_menu_left, redvus_menu_right], 0.6, {
-            // stroke: '#fff',
-            ease: Power1.easeOut
-        }, '-=0.6')
+        // .to([redvus_menu_left, redvus_menu_right], 0.6, {
+        //     // stroke: '#fff',
+        //     ease: Power1.easeOut
+        // }, '-=0.6')
         .to(redvus_menu_v, 0.6, {
             y: '-100',
             autoAlpha: 0,
@@ -451,9 +454,10 @@ function redvusMenuOpenMobile() {
     // }, '-=1.3')
     ;
 
-    redvus_menu.onclick = function () {
+    /*jshint -W030 */
+    redvus_menu.on("click", function () {
         tl.reversed() ? tl.restart() : tl.reverse(-0.3);
-    };
+    });
 
     return tl;
 }

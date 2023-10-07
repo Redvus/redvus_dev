@@ -24,7 +24,7 @@
     }
 
     &-top {
-        background-color: $secondary;
+        background-color: $five;
         // display: flex;
         // align-items: center;
         // justify-content: center;
@@ -309,6 +309,7 @@
             text-align: center;
             // transition: all 0.4s;
             // opacity: 0;
+            outline: none;
             z-index: 3;
 
             &:before {
@@ -508,7 +509,7 @@
                 a {
                     font: {
                         family: $heading-font-bold;
-                        size: 13vw;
+                        size: 10vw;
                     };
                     text-transform: uppercase;
                     color: $projectTitleColorMobile;

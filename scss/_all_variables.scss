@@ -6,6 +6,7 @@ $primary       : #dfc7b7; // Бежевый
 $secondary     : #ff643c; // Оранжевый #ff671b
 $third         : #201011; // Темный var1: #1E252B
 $fourth        : #fff;
+$five          : #93787f;
 
 $error       :   $third;
 $success     :   $fourth;
@@ -47,8 +48,8 @@ $shutterHeightMobile     : 3rem;
 /*----------  Slogan & Skills  ----------*/
 $sloganColorLight        : $fourth;
 $sloganColorDark         : $third;
-$skillsLiColor           : darken($secondary, 10%);
-$skillsLiColorHover      : lighten($secondary, 10%);
+$skillsLiColor           : darken($five, 7%);
+$skillsLiColorHover      : lighten($five, 10%);
 $skillsTextColor         : $fourth;
 
 /*----------  Project  ----------*/

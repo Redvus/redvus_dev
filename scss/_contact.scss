@@ -39,6 +39,12 @@
         display: none;
         visibility: hidden;
     }
+
+    @include grid-media($Small) {
+        margin-bottom: 5rem;
+        display: flex;
+        visibility: visible;
+    }
 }
 
 .input {
@@ -229,6 +235,16 @@
 
         &-button {
             margin-top: 2rem;
+        }
+    }
+
+    @include grid-media($Small) {
+        &__label {
+
+            &--file {
+                display: none;
+                visibility: hidden;
+            }
         }
     }
 }

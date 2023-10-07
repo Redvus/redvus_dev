@@ -77,6 +77,43 @@ body {
         margin: 0 auto;
     }
 
+    #modx-logo-color {
+        width: 40%;
+        height: auto;
+        display: block;
+
+        &_r,
+        &_d,
+        &_e_up,
+        &_e_middle,
+        &_e_down,
+        &_u_end,
+        &_s_end {
+            fill: #fff;
+            stroke: none;
+            // stroke: $primary;
+            // stroke-width: 0.7rem;
+        }
+
+        &_v_pencil {
+            fill: $secondary;
+            stroke: none;
+            // stroke: $secondary;
+            // stroke-width: 0.7rem;
+        }
+
+        &_line_v {
+            fill: $secondary;
+            stroke: none;
+            // stroke-width: 0.7rem;
+        }
+
+        &_studio {
+            fill: #fff;
+            stroke: none;
+        }
+    }
+
     // Квадратный лого
     // img {
     //     width: auto;

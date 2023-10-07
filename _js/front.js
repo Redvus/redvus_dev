@@ -1,7 +1,7 @@
 ;(function ($) {
 
 // Animation logo on first page
-var redvus_logo_v_pencil = $('#redvus_logo_v_pencil'),
+const redvus_logo_v_pencil = $('#redvus_logo_v_pencil'),
     redvus_logo_line_v = $('#redvus_logo_line_v'),
     redvus_logo_r = $('#redvus_logo_r'),
     redvus_logo_e_up = $('#redvus_logo_e_up'),
@@ -20,13 +20,13 @@ var redvus_logo_v_pencil = $('#redvus_logo_v_pencil'),
     redvus_menu_right = $('#menu_right_line'),
     redvus_menu_up = $('#menu_up_line'),
     redvus_menu_down = $('#menu_down_line'),
-    redvus_menu_cross = $('#menu_cross')
+    redvus_menu_cross = $('#menu_cross'),
     redvusWrapperContent = $('.section-container')
 ;
 
 function redvusLogoStart() {
 
-    var tl = new TimelineMax({
+    let tl = new gsap.timeline({
         // onComplete: redvusFirstSlogan(),
         delay: 1
     });
@@ -137,11 +137,11 @@ function redvusLogoStart() {
 
 function redvusMenuOpen() {
 
-    var redvusMenuLi = $('.cd-navigation li'),
+    const redvusMenuLi = $('.cd-navigation li'),
         redvusAdressLi = $('.shutter-right__adress li'),
         redvusNavSection = $('#redvusNavSection');
 
-    var tl = new TimelineMax({
+    let tl = new gsap.timeline({
         paused: true,
         reversed: true
     });
@@ -220,6 +220,7 @@ function redvusMenuOpen() {
     // }, '-=1.3')
     ;
 
+    /*jshint -W030 */
     redvus_menu.on("click", function () {
         tl.reversed() ? tl.restart() : tl.reverse(-0.3);
     });
@@ -228,12 +229,12 @@ function redvusMenuOpen() {
 }
 
 redvus_menu.on("mouseover", function () {
-    TweenMax.to(this, 0.4, {
+    gsap.to(this, 0.4, {
         scale: 1.1,
         ease: Elastic.easeOut.config(0.9, 0.4)
     });
-}), redvus_menu.on("mouseleave", function () {
-    TweenMax.to(this, 0.2, {
+}), /*jshint -W030 */redvus_menu.on("mouseleave", function () {
+    gsap.to(this, 0.2, {
         scale: 1
     });
 });
@@ -246,7 +247,7 @@ redvus_menu.on("mouseover", function () {
 
 function redvusLogoStartMobile() {
 
-    var tl = new TimelineMax({
+    let tl = new gsap.timeline({
         // onComplete: redvusLogoStart()
     });
 
@@ -340,10 +341,10 @@ function redvusLogoStartMobile() {
 
 function redvusMenuOpenMobile() {
 
-    var redvusMenuLi = $('.cd-navigation li'),
+    const redvusMenuLi = $('.cd-navigation li'),
         redvusAdressLi = $('.shutter-right__adress li');
 
-    var tl = new TimelineMax({
+    let tl = new gsap.timeline({
         paused: true,
         reversed: true
     });
@@ -413,6 +414,7 @@ function redvusMenuOpenMobile() {
     // }, '-=1.3')
     ;
 
+    /*jshint -W030 */
     redvus_menu.on("click", function () {
         tl.reversed() ? tl.restart() : tl.reverse(-0.3);
     });
@@ -429,8 +431,8 @@ function redvusMenuOpenMobile() {
 
 function sectionParallax() {
 
-    var rect = $('.section-project')[0].getBoundingClientRect();
-    var mouse = { x: 0, y: 0, moved: false };
+    let rect = $('.section-project')[0].getBoundingClientRect();
+    let mouse = { x: 0, y: 0, moved: false };
 
     $(".section-project").mousemove(function (e) {
         mouse.moved = true;
@@ -449,7 +451,7 @@ function sectionParallax() {
     });
 
     function parallaxIt(target, movement) {
-        TweenMax.to(target, 0.3, {
+        gsap.to(target, 0.3, {
             x: (mouse.x - rect.width / 2) / rect.width * movement,
             y: (mouse.y - rect.height / 2) / rect.height * movement,
             transformOrigin: "center"
@@ -458,7 +460,7 @@ function sectionParallax() {
 
     $(window).on('resize scroll', function () {
         rect = $('.section-project')[0].getBoundingClientRect();
-    })
+    });
 }
 
 /*=====  End of Parallax  ======*/
@@ -470,36 +472,37 @@ function sectionParallax() {
 
 function fullHeightScroll() {
 
-    var $window = $(window);
-    var $document = $(document);
-    //Only links that starts with #
-    var $navButtons = $("#redvusNavSection a").filter('[href^="#"]');
-    var $navGoPrev = $(".go-prev");
-    var $navGoNext = $(".go-next");
-    var $slidesContainer = $(".section-container");
-    var $slides = $(".section");
-    var $currentSlide = $slides.first();
+    let $window = $(window),
+        $document = $(document),
+        //Only links that starts with #
+        $navButtons = $("#redvusNavSection a").filter('[href^="#"]'),
+        $navGoPrev = $(".go-prev"),
+        $navGoNext = $(".go-next"),
+        $slidesContainer = $(".section-container"),
+        $slides = $(".section"),
+        $currentSlide = $slides.first()
+    ;
 
-    var $slideTimeChange = 0.8,
+    let $slideTimeChange = 0.8,
         $slideEaseChange = Power2.easeInOut,
         $navTimeChange = 0.5;
 
     //Animating flag - is our app animating
-    var isAnimating = false;
+    let isAnimating = false;
 
     //The height of the window
-    var pageHeight = $window.innerHeight();
+    let pageHeight = $window.innerHeight();
 
     //Key codes for up and down arrows on keyboard. We'll be using this to navigate change slides using the keyboard
-    var keyCodes = {
+    let keyCodes = {
         UP: 38,
         DOWN: 40
-    }
+    };
 
-    var currentIndex = 0;
+    let currentIndex = 0;
 
     /*----------  Intro  ----------*/
-    var sectionFirstArrowDown = $('.mouse'),
+    const sectionFirstArrowDown = $('.mouse'),
         frontSkillsLi = $('#frontSkills ul > li'),
         frontSkillsLine = $('#frontSkills > .list-line'),
         redvusSloganList = $('.skills'),
@@ -508,7 +511,7 @@ function fullHeightScroll() {
         footerLoad = $('footer')
     ;
 
-    var tl0 = new TimelineMax({
+    let tl0 = new gsap.timeline({
             onComplete: stopAnimation,
             // onComplete: introVivusAnimation,
             paused: true
@@ -545,13 +548,13 @@ function fullHeightScroll() {
         .reverse(false);
 
     /*----------  Section 1 БигБенКлуб  ----------*/
-    var section_1 = $('#section_1'),
+    const section_1 = $('#section_1'),
         sectionText_1 = $('#sectionText_1'),
         sectionImage_1 = $('#sectionImage_1'),
         sectionLink_1 = $('#sectionLink_1')
     ;
 
-    var tl1 = new TimelineMax({
+    let tl1 = new gsap.timeline({
         onComplete: stopAnimation
         })
         // .to(section_1, 0.4, {
@@ -576,13 +579,13 @@ function fullHeightScroll() {
         .reverse(false);
 
     /*----------  Section 2 ДизельАвто  ----------*/
-    var section_2 = $('#section_2'),
+    let section_2 = $('#section_2'),
         sectionText_2 = $('#sectionText_2'),
         sectionImage_2 = $('#sectionImage_2'),
         sectionLink_2 = $('#sectionLink_2')
     ;
 
-    var tl2 = new TimelineMax({
+    let tl2 = new gsap.timeline({
             onComplete: stopAnimation
         })
         // .to(section_2, 0.4, {
@@ -607,13 +610,13 @@ function fullHeightScroll() {
         .reverse(false);
 
     /*----------  Section 3 ДжинДжу  ----------*/
-    var section_3 = $('#section_3'),
+    let section_3 = $('#section_3'),
         sectionText_3 = $('#sectionText_3'),
         sectionImage_3 = $('#sectionImage_3'),
         sectionLink_3 = $('#sectionLink_3')
     ;
 
-    var tl3 = new TimelineMax({
+    let tl3 = new gsap.timeline({
             onComplete: stopAnimation
         })
         // .to(section_3, 0.4, {
@@ -638,13 +641,13 @@ function fullHeightScroll() {
         .reverse(false);
 
     /*----------  Section 4 Фотобокс  ----------*/
-    var section_4 = $('#section_4'),
+    let section_4 = $('#section_4'),
         sectionText_4 = $('#sectionText_4'),
         sectionImage_4 = $('#sectionImage_4'),
         sectionLink_4 = $('#sectionLink_4')
     ;
 
-    var tl4 = new TimelineMax({
+    let tl4 = new gsap.timeline({
             onComplete: stopAnimation
         })
         // .to(section_4, 0.4, {
@@ -669,13 +672,13 @@ function fullHeightScroll() {
         .reverse(false);
 
     /*----------  Section 5 Форте  ----------*/
-    var section_5 = $('#section_5'),
+    let section_5 = $('#section_5'),
         sectionText_5 = $('#sectionText_5'),
         sectionImage_5 = $('#sectionImage_5'),
         sectionLink_5 = $('#sectionLink_5')
     ;
 
-    var tl5 = new TimelineMax({
+    let tl5 = new gsap.timeline({
             onComplete: stopAnimation
         })
         // .to(section_5, 0.4, {
@@ -700,13 +703,13 @@ function fullHeightScroll() {
         .reverse(false);
 
     /*----------  Section 6 Алмаз  ----------*/
-    var section_6 = $('#section_6'),
+    let section_6 = $('#section_6'),
         sectionText_6 = $('#sectionText_6'),
         sectionImage_6 = $('#sectionImage_6'),
         sectionLink_6 = $('#sectionLink_6')
     ;
 
-    var tl6 = new TimelineMax({
+    let tl6 = new gsap.timeline({
             onComplete: stopAnimation
         })
         // .to(section_6, 0.4, {
@@ -731,13 +734,13 @@ function fullHeightScroll() {
         .reverse(false);
 
     /*----------  Section 7 Шанталь  ----------*/
-    var section_7 = $('#section_7'),
+    let section_7 = $('#section_7'),
         sectionText_7 = $('#sectionText_7'),
         sectionImage_7 = $('#sectionImage_7'),
         sectionLink_7 = $('#sectionLink_7')
     ;
 
-    var tl7 = new TimelineMax({
+    let tl7 = new gsap.timeline({
             onComplete: stopAnimation
         })
         // .to(section_7, 0.4, {
@@ -762,13 +765,13 @@ function fullHeightScroll() {
         .reverse(false);
 
     /*----------  Section 8 Форсунка  ----------*/
-    var section_8 = $('#section_8'),
+    let section_8 = $('#section_8'),
         sectionText_8 = $('#sectionText_8'),
         sectionImage_8 = $('#sectionImage_8'),
         sectionLink_8 = $('#sectionLink_8')
     ;
 
-    var tl8 = new TimelineMax({
+    let tl8 = new gsap.timeline({
             onComplete: stopAnimation
         })
         // .to(section_8, 0.4, {
@@ -793,13 +796,13 @@ function fullHeightScroll() {
         .reverse(false);
 
     /*----------  Section 9 ТрэкшнГрупп  ----------*/
-    var section_9 = $('#section_9'),
+    let section_9 = $('#section_9'),
         sectionText_9 = $('#sectionText_9'),
         sectionImage_9 = $('#sectionImage_9'),
         sectionLink_9 = $('#sectionLink_9')
     ;
 
-    var tl9 = new TimelineMax({
+    let tl9 = new gsap.timeline({
             onComplete: stopAnimation
         })
         // .to(section_9, 0.4, {
@@ -824,13 +827,13 @@ function fullHeightScroll() {
         .reverse(false);
 
     /*----------  Section 10 Экспонорм  ----------*/
-    var section_10 = $('#section_10'),
+    let section_10 = $('#section_10'),
         sectionText_10 = $('#sectionText_10'),
         sectionImage_10 = $('#sectionImage_10'),
         sectionLink_10 = $('#sectionLink_10')
     ;
 
-    var tl10 = new TimelineMax({
+    let tl10 = new gsap.timeline({
             onComplete: stopAnimation
         })
         // .to(section_10, 0.4, {
@@ -855,13 +858,13 @@ function fullHeightScroll() {
         .reverse(false);
 
     /*----------  Section 11 Тарзания  ----------*/
-    var section_11 = $('#section_11'),
+    let section_11 = $('#section_11'),
         sectionText_11 = $('#sectionText_11'),
         sectionImage_11 = $('#sectionImage_11'),
         sectionLink_11 = $('#sectionLink_11')
     ;
 
-    var tl11 = new TimelineMax({
+    let tl11 = new gsap.timeline({
             onComplete: stopAnimation
         })
         // .to(section_11, 0.4, {
@@ -887,13 +890,13 @@ function fullHeightScroll() {
         .reverse(false);
 
     /*----------  Section 12 Клубхаус  ----------*/
-    var section_12 = $('#section_12'),
+    let section_12 = $('#section_12'),
         sectionText_12 = $('#sectionText_12'),
         sectionImage_12 = $('#sectionImage_12'),
         sectionLink_12 = $('#sectionLink_12')
     ;
 
-    var tl12 = new TimelineMax({
+    let tl12 = new gsap.timeline({
             onComplete: stopAnimation
         })
         // .to(section_12, 0.4, {
@@ -918,13 +921,13 @@ function fullHeightScroll() {
         .reverse(false);
 
     /*----------  Section 13 Архимед  ----------*/
-    var section_13 = $('#section_13'),
+    let section_13 = $('#section_13'),
         sectionText_13 = $('#sectionText_13'),
         sectionImage_13 = $('#sectionImage_13'),
         sectionLink_13 = $('#sectionLink_13')
     ;
 
-    var tl13 = new TimelineMax({
+    let tl13 = new gsap.timeline({
             onComplete: stopAnimation
         })
         // .set(section_13, {
@@ -948,13 +951,13 @@ function fullHeightScroll() {
         .reverse(false);
 
     /*----------  Section 14 Такелаж  ----------*/
-    var section_14 = $('#section_14'),
+    let section_14 = $('#section_14'),
         sectionText_14 = $('#sectionText_14'),
         sectionImage_14 = $('#sectionImage_14'),
         sectionLink_14 = $('#sectionLink_14')
     ;
 
-    var tl14 = new TimelineMax({
+    let tl14 = new gsap.timeline({
             onComplete: stopAnimation
         })
         // .to(section_14, 0.4, {
@@ -979,13 +982,13 @@ function fullHeightScroll() {
         .reverse(false);
 
     /*----------  Section 15 Бенчмарк  ----------*/
-    var section_15 = $('#section_15'),
+    let section_15 = $('#section_15'),
         sectionText_15 = $('#sectionText_15'),
         sectionImage_15 = $('#sectionImage_15'),
         sectionLink_15 = $('#sectionLink_15')
     ;
 
-    var tl15 = new TimelineMax({
+    let tl15 = new gsap.timeline({
             onComplete: stopAnimation
         })
         // .to(section_15, 0.4, {
@@ -1010,13 +1013,13 @@ function fullHeightScroll() {
         .reverse(false);
 
     /*----------  Section 16 Габарит  ----------*/
-    var section_16 = $('#section_16'),
+    let section_16 = $('#section_16'),
         sectionText_16 = $('#sectionText_16'),
         sectionImage_16 = $('#sectionImage_16'),
         sectionLink_16 = $('#sectionLink_16')
     ;
 
-    var tl16 = new TimelineMax({
+    let tl16 = new gsap.timeline({
             onComplete: stopAnimation
         })
         // .to(section_16, 0.4, {
@@ -1041,13 +1044,13 @@ function fullHeightScroll() {
         .reverse(false);
 
     /*----------  Section 17 Гараж  ----------*/
-    var section_17 = $('#section_17'),
+    let section_17 = $('#section_17'),
         sectionText_17 = $('#sectionText_17'),
         sectionImage_17 = $('#sectionImage_17'),
         sectionLink_17 = $('#sectionLink_17')
     ;
 
-    var tl17 = new TimelineMax({
+    let tl17 = new gsap.timeline({
             onComplete: stopAnimation
         })
         // .to(section_17, 0.4, {
@@ -1072,13 +1075,13 @@ function fullHeightScroll() {
         .reverse(false);
 
     /*----------  Section 18 Timetolunch  ----------*/
-    var section_18 = $('#section_18'),
+    let section_18 = $('#section_18'),
         sectionText_18 = $('#sectionText_18'),
         sectionImage_18 = $('#sectionImage_18'),
         sectionLink_18 = $('#sectionLink_18')
     ;
 
-    var tl18 = new TimelineMax({
+    let tl18 = new gsap.timeline({
             onComplete: stopAnimation
         })
         // .to(section_18, 0.4, {
@@ -1103,13 +1106,13 @@ function fullHeightScroll() {
         .reverse(false);
 
     /*----------  Section 19 ДАП-тех  ----------*/
-    var section_19 = $('#section_19'),
+    let section_19 = $('#section_19'),
         sectionText_19 = $('#sectionText_19'),
         sectionImage_19 = $('#sectionImage_19'),
         sectionLink_19 = $('#sectionLink_19')
     ;
 
-    var tl19 = new TimelineMax({
+    let tl19 = new gsap.timeline({
             onComplete: stopAnimation
         })
         // .to(section_19, 0.4, {
@@ -1134,13 +1137,13 @@ function fullHeightScroll() {
         .reverse(false);
 
     /*----------  Section 20 ДАП-сервис  ----------*/
-    var section_20 = $('#section_20'),
+    let section_20 = $('#section_20'),
         sectionText_20 = $('#sectionText_20'),
         sectionImage_20 = $('#sectionImage_20'),
         sectionLink_20 = $('#sectionLink_20')
     ;
 
-    var tl20 = new TimelineMax({
+    let tl20 = new gsap.timeline({
             onComplete: stopAnimation
         })
         // .to(section_20, 0.4, {
@@ -1164,7 +1167,243 @@ function fullHeightScroll() {
         }, "-=0.6")
         .reverse(false);
 
-    var tls = [tl0, tl20, tl19, tl18, tl17, tl15, tl14, tl13, tl12, tl11, tl10, tl9, tl8, tl7, tl5, tl2];
+    /*----------  Section 21 6 База  ----------*/
+    let section_21 = $('#section_21'),
+        sectionText_21 = $('#sectionText_21'),
+        sectionImage_21 = $('#sectionImage_21'),
+        sectionLink_21 = $('#sectionLink_21')
+        ;
+
+    let tl21 = new gsap.timeline({
+        onComplete: stopAnimation
+    })
+        // .to(section_20, 0.4, {
+        //     backgroundColor: "#5ea2bd",
+        //     ease: Power2.easeInOut
+        // }, "-=0.4")
+        .from(sectionLink_21, 1, {
+            scale: 1.1,
+            autoAlpha: 0,
+            ease: Power2.easeOut
+        }, "-=0.6")
+        .from(sectionText_21, 1, {
+            yPercent: -10,
+            autoAlpha: 0,
+            ease: Power2.easeOut
+        }, "-=0.6")
+        .from(sectionImage_21, 1, {
+            yPercent: -10,
+            autoAlpha: 0,
+            ease: Power2.easeOut
+        }, "-=0.6")
+        .reverse(false);
+
+    /*----------  Section 22 Бизнес Ремонт  ----------*/
+    let section_22 = $('#section_22'),
+        sectionText_22 = $('#sectionText_22'),
+        sectionImage_22 = $('#sectionImage_22'),
+        sectionLink_22 = $('#sectionLink_22')
+        ;
+
+    let tl22 = new gsap.timeline({
+        onComplete: stopAnimation
+    })
+        // .to(section_20, 0.4, {
+        //     backgroundColor: "#5ea2bd",
+        //     ease: Power2.easeInOut
+        // }, "-=0.4")
+        .from(sectionLink_22, 1, {
+            scale: 1.1,
+            autoAlpha: 0,
+            ease: Power2.easeOut
+        }, "-=0.6")
+        .from(sectionText_22, 1, {
+            yPercent: -10,
+            autoAlpha: 0,
+            ease: Power2.easeOut
+        }, "-=0.6")
+        .from(sectionImage_22, 1, {
+            scale: 0.9,
+            autoAlpha: 0,
+            ease: Power2.easeOut
+        }, "-=0.6")
+        .reverse(false);
+
+    /*----------  Section 23 Аквалайф  ----------*/
+    let section_23 = $('#section_23'),
+        sectionText_23 = $('#sectionText_23'),
+        sectionImage_23 = $('#sectionImage_23'),
+        sectionLink_23 = $('#sectionLink_23')
+        ;
+
+    let tl23 = new gsap.timeline({
+        onComplete: stopAnimation
+    })
+        // .to(section_20, 0.4, {
+        //     backgroundColor: "#5ea2bd",
+        //     ease: Power2.easeInOut
+        // }, "-=0.4")
+        .from(sectionLink_23, 1, {
+            scale: 1.1,
+            autoAlpha: 0,
+            ease: Power2.easeOut
+        }, "-=0.6")
+        .from(sectionText_23, 1, {
+            yPercent: -10,
+            autoAlpha: 0,
+            ease: Power2.easeOut
+        }, "-=0.6")
+        .from(sectionImage_23, 1, {
+            xPercent: 10,
+            autoAlpha: 0,
+            ease: Power2.easeOut
+        }, "-=0.6")
+        .reverse(false);
+
+    /*----------  Section 24 Телеком Альянс  ----------*/
+    let section_24 = $('#section_24'),
+        sectionText_24 = $('#sectionText_24'),
+        sectionImage_24 = $('#sectionImage_24'),
+        sectionLink_24 = $('#sectionLink_24')
+        ;
+
+    let tl24 = new gsap.timeline({
+        onComplete: stopAnimation
+    })
+        // .to(section_20, 0.4, {
+        //     backgroundColor: "#5ea2bd",
+        //     ease: Power2.easeInOut
+        // }, "-=0.4")
+        .from(sectionLink_24, 1, {
+            scale: 1.1,
+            autoAlpha: 0,
+            ease: Power2.easeOut
+        }, "-=0.6")
+        .from(sectionText_24, 1, {
+            yPercent: -10,
+            autoAlpha: 0,
+            ease: Power2.easeOut
+        }, "-=0.6")
+        .from(sectionImage_24, 1, {
+            scale: 0.9,
+            autoAlpha: 0,
+            ease: Power2.easeOut
+        }, "-=0.6")
+        .reverse(false);
+
+    /*----------  Section 25 Playoff  ----------*/
+    let section_25 = $('#section_25'),
+        sectionText_25 = $('#sectionText_25'),
+        sectionImage_25 = $('#sectionImage_25'),
+        sectionLink_25 = $('#sectionLink_25')
+        ;
+
+    let tl25 = new gsap.timeline({
+        onComplete: stopAnimation
+    })
+        // .to(section_20, 0.4, {
+        //     backgroundColor: "#5ea2bd",
+        //     ease: Power2.easeInOut
+        // }, "-=0.4")
+        .from(sectionLink_25, 1, {
+            scale: 1.1,
+            autoAlpha: 0,
+            ease: Power2.easeOut
+        }, "-=0.6")
+        .from(sectionText_25, 1, {
+            scale: 0.9,
+            autoAlpha: 0,
+            ease: Power2.easeOut
+        }, "-=0.6")
+        .from(sectionImage_25, 1, {
+            xPercent: -15,
+            autoAlpha: 0,
+            ease: Power2.easeOut
+        }, "-=0.6")
+        .reverse(false);
+
+    /*----------  Section 26 SMIBS  ----------*/
+    let section_26 = $('#section_26'),
+        sectionText_26 = $('#sectionText_26'),
+        sectionImage_26 = $('#sectionImage_26'),
+        sectionLink_26 = $('#sectionLink_26')
+        ;
+
+    let tl26 = new gsap.timeline({
+        onComplete: stopAnimation
+    })
+        .from(sectionLink_26, 1, {
+            scale: 0.9,
+            autoAlpha: 0,
+            ease: Power2.easeOut
+        }, "-=0.6")
+        .from(sectionText_26, 1, {
+            scale: 1.1,
+            autoAlpha: 0,
+            ease: Power2.easeOut
+        }, "-=0.6")
+        .from(sectionImage_26, 1, {
+            xPercent: 10,
+            autoAlpha: 0,
+            ease: Power2.easeOut
+        }, "-=0.6")
+        .reverse(false);
+
+    /*----------  Section 27 Goliaph  ----------*/
+    let section_27 = $('#section_27'),
+        sectionText_27 = $('#sectionText_27'),
+        sectionImage_27 = $('#sectionImage_27'),
+        sectionLink_27 = $('#sectionLink_27')
+        ;
+
+    let tl27 = new gsap.timeline({
+        onComplete: stopAnimation
+    })
+        .from(sectionLink_27, 1, {
+            scale: 1.1,
+            autoAlpha: 0,
+            ease: Power2.easeOut
+        }, "-=0.6")
+        .from(sectionText_27, 1, {
+            scale: 0.9,
+            autoAlpha: 0,
+            ease: Power2.easeOut
+        }, "-=0.6")
+        .from(sectionImage_27, 1, {
+            scale: 0.9,
+            autoAlpha: 0,
+            ease: Power2.easeOut
+        }, "-=0.6")
+        .reverse(false);
+
+    /*----------  Section 28 LuxuryTime  ----------*/
+    let section_28 = $('#section_28'),
+        sectionText_28 = $('#sectionText_28'),
+        sectionImage_28 = $('#sectionImage_28'),
+        sectionLink_28 = $('#sectionLink_28')
+        ;
+
+    let tl28 = new gsap.timeline({
+        onComplete: stopAnimation
+    })
+        .from(sectionLink_28, 1, {
+            scale: 1.1,
+            autoAlpha: 0,
+            ease: Power2.easeOut
+        }, "-=0.6")
+        .from(sectionText_28, 1, {
+            scale: 0.9,
+            autoAlpha: 0,
+            ease: Power2.easeOut
+        }, "-=0.6")
+        .from(sectionImage_28, 1, {
+            xPercent: -10,
+            autoAlpha: 0,
+            ease: Power2.easeOut
+        }, "-=0.6")
+        .reverse(false);
+
+    let tls = [tl0, tl27, tl26, tl25, tl24, tl23, tl22, tl21, tl20, tl19, tl18, tl17, tl15, tl14, tl11, tl10, tl9, tl8, tl7, tl5, tl2];
 
     //Going to the first slide
     goToSlide($currentSlide);
@@ -1182,10 +1421,10 @@ function fullHeightScroll() {
     //When a button is clicked - first get the button href, and then slide to the container, if there's such a container
     function onNavButtonClick(event) {
         //The clicked button
-        var $button = $(this);
+        let $button = $(this);
 
         //The slide the button points to
-        var $slide = $($button.attr("href"));
+        let $slide = $($button.attr("href"));
 
         //If the slide exists, we go to it
         if ($slide.length) {
@@ -1198,7 +1437,7 @@ function fullHeightScroll() {
     //This way, if there's text input, the user is still able to fill it
     function onKeyDown(event) {
 
-        var PRESSED_KEY = event.keyCode;
+        let PRESSED_KEY = event.keyCode;
 
         if (PRESSED_KEY == keyCodes.UP) {
             goToPrevSlide();
@@ -1213,7 +1452,7 @@ function fullHeightScroll() {
     //When user scrolls with the mouse, we have to change slides
     function onMouseWheel(event) {
         //Normalize event wheel delta
-        var delta = event.originalEvent.wheelDelta / 30 || -event.originalEvent.detail;
+        let delta = event.originalEvent.wheelDelta / 30 || -event.originalEvent.detail;
 
         //If the user scrolled up, it goes to previous slide, otherwise - to next slide
         if (delta < -1) {
@@ -1248,7 +1487,7 @@ function fullHeightScroll() {
             $currentSlide = $slide;
 
             //Sliding to current slide
-            TweenMax.to($slidesContainer, $slideTimeChange, {
+            gsap.to($slidesContainer, $slideTimeChange, {
                 scrollTo: {
                     y: pageHeight * $currentSlide.index()
                 },
@@ -1258,19 +1497,19 @@ function fullHeightScroll() {
             });
 
             //Definig slide status
-            TweenMax.to($slides.filter(".active"), 0.1, {
+            gsap.to($slides.filter(".active"), 0.1, {
                 className: "-=active"
             });
-            TweenMax.to($slides.filter($currentSlide), 0.1, {
+            gsap.to($slides.filter($currentSlide), 0.1, {
                 className: "+=active"
             });
 
             //Animating menu items
-            TweenMax.to($navButtons.filter(".active"), $navTimeChange, {
+            gsap.to($navButtons.filter(".active"), $navTimeChange, {
                 className: "-=active"
             });
 
-            TweenMax.to($navButtons.filter('[href="#' + $currentSlide.attr("id") + '"]'), $navTimeChange, {
+            gsap.to($navButtons.filter('[href="#' + $currentSlide.attr("id") + '"]'), $navTimeChange, {
                 className: "+=active"
             });
 
@@ -1300,19 +1539,19 @@ function fullHeightScroll() {
     function onResize(event) {
 
         //This will give us the new height of the window
-        var newPageHeight = $window.innerHeight();
+        let newPageHeight = $window.innerHeight();
 
         //If the new height is different from the old height ( the browser is resized vertically ), the slides are resized
         if (pageHeight !== newPageHeight) {
             pageHeight = newPageHeight;
 
             //This can be done via CSS only, but fails into some old browsers, so I prefer to set height via JS
-            TweenMax.set([$slidesContainer, $slides], {
+            gsap.set([$slidesContainer, $slides], {
                 height: pageHeight + "px"
             });
 
             //The current slide should be always on the top
-            TweenMax.set($slidesContainer, {
+            gsap.set($slidesContainer, {
                 scrollTo: {
                     y: pageHeight * $currentSlide.index()
                 }
@@ -1321,7 +1560,7 @@ function fullHeightScroll() {
 
     }
 
-    // var contactHeaderButton = $('#headerButton');
+    // let contactHeaderButton = $('#headerButton');
     // contactHeaderButton.on("click", goToSlide('#section_4'));
 }
 
