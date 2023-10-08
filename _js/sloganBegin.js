@@ -40,6 +40,7 @@ function sloganBeginLoad() {
                 onComplete: () => {
                     wrapperBegin.removeChild(wrapperShutterLeft);
                     wrapperBegin.removeChild(wrapperShutterRight);
+                    sloganTopLoad();
                 }
             });
             tlShutter
@@ -126,5 +127,3 @@ function sloganBeginLoad() {
         })
     ;
 }
-
-sloganBeginLoad();

@@ -1,6 +1,6 @@
-/*=====================================
-=            First Content            =
-=====================================*/
+/*===============================
+=            Section            =
+===============================*/
 
 .section {
     width: calc(100% - (#{$shutterWidth} * 2));
@@ -9,7 +9,7 @@
     // flex-direction: column;
     // align-items: center;
     // justify-content: center;
-    position: relative;
+    position: fixed;
     z-index: 0;
     padding: 0 $shutterWidth;
     // transition: background 1s;
@@ -31,39 +31,6 @@
         justify-content: center;
         position: relative;
         padding: 0;
-
-        svg {
-            width: 30%;
-            height: auto;
-            display: block;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            display: none;
-            visibility: hidden;
-
-            text {
-                font-family: $heading-font-cond;
-                fill: $sloganColorDark;
-            }
-
-            #design {
-                transform-origin: 50% 50%;
-            }
-
-            #ne {
-                fill: $sloganColorLight;
-            }
-
-            #simple {
-                fill: $sloganColorLight;
-            }
-
-            #hard {
-                fill: $sloganColorLight;
-            }
-        }
 
         &__text {
             width: 100%;
@@ -174,9 +141,10 @@
 
         &__block {
             width: $sectionTopBlockWidth;
-            min-height: 50vh;
+            min-height: 50vmin;
             display: block;
             position: relative;
+            //margin-left: 1.7vmin;
 
             #sloganTop_design {
                 width: $sectionTopBlockWidth;
@@ -230,7 +198,31 @@
                 display: block;
                 position: absolute;
                 right: 1.7vmin;
-                top: 39.5vmin;
+                top: 39.7vmin;
+            }
+        }
+
+        &__line {
+            width: 2vmin;
+            height: 100vmin;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            position: absolute;
+            overflow: hidden;
+            left: 1vmin;
+            top: 25.5vmin;
+
+            svg {
+                position: relative;
+
+                line {
+                    fill: none; //#8C9093
+                    stroke: lighten($third, 20%);
+                    stroke-linecap: round;
+                    stroke-width: 6;
+                    stroke-dasharray: 1 15;
+                }
             }
         }
 
