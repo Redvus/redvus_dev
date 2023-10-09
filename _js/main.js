@@ -1,4 +1,7 @@
+
+
 function initMain() {
+    scrollSmooth();
     // sloganBeginLoad();
     sloganTopLoad();
 }

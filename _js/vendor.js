@@ -1,41 +1,45 @@
-(function ($) {
+gsap.registerPlugin(ScrollTrigger);
 
-    // function cookieFront() {
+const scrollLine = document.getElementById('scrollLine'),
+    wrapper = document.querySelector('.wrapper'),
+    locoScroll = new LocomotiveScroll({
+        el: wrapper,
+        smooth: true,
+        multiplier: 0.4
+    });
 
-    //     if (!$.cookie('was')) {
+function scrollSmooth() {
 
-    //         permissionBlock.removeClass('permission-hidden');
+    locoScroll.on("scroll", ScrollTrigger.update);
 
-    //     }
+    ScrollTrigger.scrollerProxy(wrapper, {
+        scrollTop(value) {
+            return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+        },
 
-    //     $.cookie('was', true, {
-    //         expires: 7,
-    //         path: '/'
-    //     });
+        getBoundingClientRect() {
+            return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+        },
+        // pinType: document.querySelector(".wrapper-info").style.transform ? "transform" : "fixed"
+    });
 
-    // }
+    gsap.from(scrollLine, {
+        scrollTrigger: {
+            trigger: scrollLine,
+            scroller: wrapper,
+            scrub: true,
+            start: "0 0",
+            end: () => `+=${wrapper.offsetHeight - window.innerHeight}`,
+            // markers: {
+            // 	startColor: "#ccc",
+            // 	endColor: "#ccc"
+            // }
+        },
+        scaleX: 0,
+        transformOrigin: "0 0",
+        ease: "none"
+    });
 
-    /*=====================================
-    =            Smooth Scroll            =
-    =====================================*/
-
-    // var Scrollbar = window.Scrollbar;
-    // Scrollbar.init(document.getElementById('main-scrollbar'), {
-    //     speed: 1,
-    //     // overscrollEffectColor: ''
-    // });
-
-    function scrollbarAllSmooth() {
-        $('body').niceScroll({
-            cursorcolor: "#ffffff",
-            cursorwidth: "5px",
-            // cursorborder: "1px solid #fff",
-            scrollspeed: 80,
-            mousescrollstep: 10,
-            zindex: 9999
-        });
-    }
-
-    // scrollbarAllSmooth();
-
-}(jQuery));
+    ScrollTrigger.addEventListener("refreshInit", () => locoScroll.update());
+    ScrollTrigger.refresh();
+}

@@ -13,8 +13,10 @@
     width: 100%;
     min-height: 100vh;
     position: relative;
+    top: 0;
+    left: 0;
     background-color: $layoutBackground;
-    overflow: hidden;
+    overflow: auto;
 
     &-front {
         width: 100%;
@@ -95,6 +97,113 @@
         align-items: center;
         justify-content: center;
         overflow: hidden;
+    }
+
+    &__slogan {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 0;
+
+        &_block {
+            width: $sectionTopBlockWidth;
+            min-height: 50vmin;
+            display: block;
+            position: relative;
+            //margin-left: 1.7vmin;
+
+            svg {
+                overflow: visible;
+
+                path {
+                    fill: $sloganColorLight;
+                }
+            }
+
+            #sloganTop_design {
+                width: $sectionTopBlockWidth;
+                height: auto;
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 10.5vmin;
+                transform: translateX(-1.7vmin);
+            }
+
+            #sloganTop_smart {
+                width: calc(#{$sectionTopBlockWidth} - 15vmin);
+                height: auto;
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+
+            #sloganTop_effective {
+                width: calc(#{$sectionTopBlockWidth} - 15vmin);
+                height: auto;
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 7vmin;
+            }
+
+            #sloganTop_visual {
+                width: calc(#{$sectionTopBlockWidth} - 8.5vmin);
+                height: auto;
+                display: block;
+                position: absolute;
+                right: 1.7vmin;
+                top: 25.5vmin;
+            }
+
+            #sloganTop_unic {
+                width: calc(#{$sectionTopBlockWidth} - 8.5vmin);
+                height: auto;
+                display: block;
+                position: absolute;
+                right: 1.7vmin;
+                top: 32.5vmin;
+            }
+
+            #sloganTop_specific {
+                width: calc(#{$sectionTopBlockWidth} - 8.5vmin);
+                height: auto;
+                display: block;
+                position: absolute;
+                right: 1.7vmin;
+                top: 39.7vmin;
+            }
+        }
+
+        &_line {
+            width: 2vmin;
+            height: 100vmin;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            position: absolute;
+            overflow: hidden;
+            left: 1vmin;
+            top: 25.5vmin;
+
+            svg {
+                position: relative;
+
+                line {
+                    fill: none; //#8C9093
+                    stroke: $scrollLineColor;
+                    stroke-linecap: round;
+                    stroke-width: 6;
+                    stroke-dasharray: 1 15;
+                }
+            }
+        }
     }
 
     &-error {
@@ -328,70 +437,92 @@
 .container {
 
     &-begin {
-        width: 30%;
-        min-height: 60vh;
-        max-height: 70vh;
+        width: 40vmin;
+        height: 46.3vmin;
         display: block;
         position: absolute;
         z-index: 1000;
 
+        svg {
+            overflow: visible;
+        }
+
         #sloganBegin_ne {
-            width: 75%;
+            width: 68%;
             height: auto;
             display: block;
             position: absolute;
             top: 0;
             left: 0;
+
+            path {
+                fill: $sloganColorLight;
+            }
         }
 
         #sloganBegin_vseTak {
-            width: 75%;
+            width: 68%;
             height: auto;
             display: block;
             position: absolute;
-            top: 0;
+            top: 25.2vmin;
             left: 0;
-            transform: translateY(273%);
+
+            path {
+                fill: $sloganColorDark;
+            }
         }
 
         #sloganBegin_simple {
-            width: 75%;
+            width: 68%;
             height: auto;
             display: block;
             position: absolute;
-            top: 0;
+            top: 35.5vmin;
             left: 0;
-            transform: translateY(430%);
+
+            path {
+                fill: $sloganColorLight;
+            }
         }
 
         #sloganBegin_asItSeems {
-            width: 19%;
+            width: 17.2%;
             height: auto;
             display: block;
             position: absolute;
             top: 0;
-            right: 0;
-            transform-origin: 100% 0;
+            right: 4.5vmin;
+
+            path {
+                fill: $sloganColorDark;
+            }
         }
 
         #sloganBegin_hard {
-            width: 75%;
+            width: 100%;
             height: auto;
             display: block;
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
-            transform: translateY(500%);
+
+            path {
+                fill: $sloganColorLight;
+            }
         }
 
         #sloganBegin_looksLke {
-            width: 40.6%;
+            width: 29.6%;
             height: auto;
             display: block;
             position: absolute;
             top: 0;
-            right: 0;
-            transform: translateX(50%);
+            right: -1vmin;
+
+            path {
+                fill: $sloganColorDark;
+            }
         }
     }
 }
