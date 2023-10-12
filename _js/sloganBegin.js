@@ -135,6 +135,7 @@ function sloganBeginLoad() {
                         wrapperBegin.removeChild(wrapperShutterLeft);
                         wrapperBegin.removeChild(wrapperShutterRight);
                         sloganTopLoad();
+                        frontScroll();
                     },
                     delay: "-0.3"
                 });

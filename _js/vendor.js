@@ -5,7 +5,7 @@ const scrollLine = document.getElementById('scrollLine'),
     locoScroll = new LocomotiveScroll({
         el: wrapper,
         smooth: true,
-        multiplier: 0.4
+        multiplier: 0.3
     });
 
 function scrollSmooth() {
@@ -35,7 +35,7 @@ function scrollSmooth() {
             // 	endColor: "#ccc"
             // }
         },
-        scaleX: 0,
+        top: 0,
         transformOrigin: "0 0",
         ease: "none"
     });

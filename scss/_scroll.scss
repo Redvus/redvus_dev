@@ -90,13 +90,13 @@ html {
 }
 
 .scroll-line {
-    width: 100%;
+    width: $headerLineHeight;
     height: $headerLineHeight;
     display: block;
     position: fixed;
     background-color: $scrollLineColor;
-    top: 0;
-    left: 0;
+    top: calc(100vh - #{$headerLineHeight});
+    right: 0;
     z-index: 9995;
 
     &__back {
@@ -109,6 +109,28 @@ html {
         left: 0;
         background-color: $scrollLineColor;
         z-index: 0;
+    }
+
+    ul {
+        width: $scrollLineTextWidth;
+        height: $headerLineHeight;
+        display: block;
+        position: absolute;
+        right: calc(#{$headerLineHeight} + 0.3rem);
+
+        li {
+            width: $scrollLineTextWidth;
+            height: $headerLineHeight;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            position: absolute;
+            font-size: $font-size-small;
+            color: $scrollLineColor;
+            text-align: right;
+            opacity: 0;
+            visibility: hidden;
+        }
     }
 }
 

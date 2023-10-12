@@ -4,6 +4,7 @@ function initMain() {
     scrollSmooth();
     // sloganBeginLoad();
     sloganTopLoad();
+    frontScroll();
 }
 
 function initMainMobile() {

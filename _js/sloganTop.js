@@ -129,10 +129,7 @@ function sloganTopLoad() {
 
     function sloganTopAnim() {
         let tl = gsap.timeline({
-            delay: "-0.5",
-            onComplete: () => {
-                frontScroll();
-            }
+            delay: "-0.5"
         });
         tl
             .from(sloganTopDesign, {

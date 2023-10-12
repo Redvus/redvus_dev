@@ -31,8 +31,9 @@ $layoutBackground        : $third;
 $layoutShutterBackground : $secondary;
 $layoutInfoWidth         : 50%;
 $layoutContactWidth      : 50%;
-$headerLineHeight        : 0.4rem;
-$scrollLineColor         : lighten($third, 20%);
+$headerLineHeight        : 0.8rem;
+$scrollLineColor         : $fourth;
+$scrollLineTextWidth     : 8rem;
 
 $projectFirst  : #323E48;
 $projectSecond : #000;
