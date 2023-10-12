@@ -114,7 +114,12 @@ class ProjectFront {
         ScrollTrigger.refresh();
     }
 
-    projectFrontSimple(projectNum, projectTitle, projectLink, projectImagePrev, projectImageNext) {
+    projectFrontSimple(
+        projectNum,
+        projectTitle,
+        projectLink,
+        projectImagePrev,
+        projectImageNext) {
         let tl = new gsap.timeline({
             scrollTrigger: {
                 trigger: projectNum,

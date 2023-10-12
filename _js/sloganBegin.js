@@ -134,8 +134,6 @@ function sloganBeginLoad() {
                     onComplete: () => {
                         wrapperBegin.removeChild(wrapperShutterLeft);
                         wrapperBegin.removeChild(wrapperShutterRight);
-                        sloganTopLoad();
-                        frontScroll();
                     },
                     delay: "-0.3"
                 });
@@ -153,6 +151,11 @@ function sloganBeginLoad() {
                         zIndex: "-1"
                     })
                 ;
+                sloganTopLoad();
+                frontScroll();
+                redvusLogoStart();
+                redvusMenuStart();
+                redvusMenuOpen();
             }
         });
 

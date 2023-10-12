@@ -5,6 +5,9 @@ function initMain() {
     // sloganBeginLoad();
     sloganTopLoad();
     frontScroll();
+    redvusLogoStart();
+    redvusMenuStart();
+    redvusMenuOpen()
 }
 
 function initMainMobile() {
