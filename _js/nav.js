@@ -33,7 +33,8 @@ function redvusLogoStart() {
 
     tlLogo
         .from(redvus_logo_v_pencil, {
-            duration: 0.6,
+            duration: 0.5,
+            delay: "-0.2",
             x: "-500%",
             autoAlpha: 0,
             ease: "power1.inOut"
@@ -132,21 +133,21 @@ function redvusMenuOpen() {
     });
 
     tlMenuOpen
-        // .set(redvus_shutter_right, {
-        //     backgroundColor: "#201011"
-        // })
+        .set(redvus_shutter_right, {
+            backgroundColor: "transparent"
+        })
         .to(redvus_shutter_right, {
             duration: 0.8,
             delay: "-0.2",
             width: '50%',
-            backgroundColor: '#071a23',
+            backgroundColor: '#092330',
             ease: "power3.inOut"
         })
         .to(redvus_shutter_left, {
             duration: 0.8,
             delay: "-0.8",
             width: '50%',
-            backgroundColor: '#092330',
+            backgroundColor: '#ff643c',
             ease: "power3.inOut"
         })
         .from(redvusNavSection, {

@@ -2,12 +2,8 @@
 
 function initMain() {
     scrollSmooth();
-    // sloganBeginLoad();
-    sloganTopLoad();
-    frontScroll();
-    redvusLogoStart();
-    redvusMenuStart();
-    redvusMenuOpen()
+    sloganBeginLoad();
+    redvusMenuOpen();
 }
 
 function initMainMobile() {

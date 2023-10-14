@@ -19,21 +19,19 @@ $base-duration:     0.3s;
 $base-timing:       0.3s;
 
 /*----------  Logo & Menu  ----------*/
-$logoColorLight          : $secondary;
-$logoColorDark           : $fourth;
+$logoColorLight          : $fourth;
+$logoColorDark           : $third;
 $menuLiColor             : $fourth;
 $menuLiColorHover        : $secondary;
 $navActiveColor          : $fourth;
 $navHoverColor           : $third;
 
 /*----------  Layout  ----------*/
-$layoutBackground        : $third;
+$layoutBackground        : lighten($five, 30%);
 $layoutShutterBackground : $secondary;
 $layoutInfoWidth         : 50%;
 $layoutContactWidth      : 50%;
 $headerLineHeight        : 0.8rem;
-$scrollLineColor         : $fourth;
-$scrollLineTextWidth     : 8rem;
 
 $projectFirst  : #323E48;
 $projectSecond : #000;
@@ -52,8 +50,11 @@ $shutterHeightMobile     : 3rem;
 $sectionTopBlockWidth: 42vmin;
 
 /*----------  Slogan & Skills  ----------*/
-$sloganColorLight        : lighten($five, 20%);
-$sloganColorDark         : lighten($five, 10%);
+$sloganColorLight        : $fourth;
+$sloganColorDark         : lighten($five, 50%);
+$scrollLineColor         : $fourth;
+$scrollLineTextWidth     : 8rem;
+
 $skillsLiColor           : darken($secondary, 10%);
 $skillsLiColorHover      : lighten($secondary, 10%);
 $skillsTextColor         : $fourth;
@@ -241,7 +242,7 @@ $font-size-h6:      modular-scale(1) !default; // ~1.2rem 19px
 body {
     @extend %px;
     margin: 0;
-    //background-color: #000;
+    background-color: $layoutBackground;
     // @extend %scrollbar_body;
 }
 

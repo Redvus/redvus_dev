@@ -43,3 +43,32 @@ function scrollSmooth() {
     ScrollTrigger.addEventListener("refreshInit", () => locoScroll.update());
     ScrollTrigger.refresh();
 }
+
+function reloadWindowResize() {
+    window.onresize = function () {
+        location.reload();
+    }
+}
+
+function keyLock() {
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'PageDown' || e.key === 'PageUp' || e.key === 'Home' || e.key === 'End') {
+            location.reload();
+        }
+    }, true);
+}
+
+function initMain() {
+    reloadWindowResize();
+    keyLock();
+}
+
+function initMainMobile() {
+
+}
+
+if (document.body.clientWidth > 820 || screen.width > 820) {
+    initMain();
+} else {
+    initMainMobile();
+}

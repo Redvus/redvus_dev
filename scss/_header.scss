@@ -68,7 +68,7 @@
         align-items: center;
         right: 0;
         bottom: 0;
-        // background-color: $layoutShutterBackground;
+        //background-color: transparent !important;
         position: fixed;
         // transition: background 0.8s;
 
@@ -82,28 +82,28 @@
             // transform-origin: 50% 50%;
 
             &_v {
-                fill: $logoColorDark;
+                fill: $logoColorLight;
                 stroke: none;
             }
 
             &_left_line,
             &_right_line {
                 fill: none;
-                stroke: $logoColorDark;
+                stroke: $logoColorLight;
                 stroke-width: 0.4rem;
             }
 
             &_up_line,
             &_down_line {
                 fill: none;
-                stroke: $logoColorDark;
+                stroke: $logoColorLight;
                 stroke-width: 0.4rem;
                 opacity: 0;
             }
 
             &_cross {
                 fill: none;
-                stroke: $logoColorDark;
+                stroke: $logoColorLight;
                 stroke-width: 0.4rem;
             }
         }

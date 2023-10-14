@@ -1,15 +1,18 @@
 'use strict';
 
 function sloganBeginLoad() {
-    const wrapperBegin = document.querySelector('.wrapper'),
+    const wrapperBegin = document.querySelector('.wrapper-begin'),
+        bodyBlock = document.body,
         containerSlogan = document.createElement('div'),
-        wrapperShutterLeft = document.createElement('div'),
-        wrapperShutterRight = document.createElement('div')
+        // wrapperShutterLeft = document.createElement('div'),
+        // wrapperShutterRight = document.createElement('div')
+        wrapperShutterLeft = document.querySelector('.wrapper__shutter_left'),
+        wrapperShutterRight = document.querySelector('.wrapper__shutter_right')
     ;
 
-    wrapperBegin.className += ' wrapper-begin';
-    wrapperShutterLeft.className = 'wrapper__shutter wrapper__shutter_left';
-    wrapperShutterRight.className = 'wrapper__shutter wrapper__shutter_right';
+    // wrapperBegin.className += ' wrapper-begin';
+    // wrapperShutterLeft.className = 'wrapper__shutter wrapper__shutter_left';
+    // wrapperShutterRight.className = 'wrapper__shutter wrapper__shutter_right';
 
     containerSlogan.className += 'container-begin';
     containerSlogan.innerHTML = `
@@ -114,8 +117,8 @@ function sloganBeginLoad() {
         </svg>
     `;
     wrapperBegin.appendChild(containerSlogan);
-    wrapperBegin.appendChild(wrapperShutterLeft);
-    wrapperBegin.appendChild(wrapperShutterRight);
+    // wrapperBegin.appendChild(wrapperShutterLeft);
+    // wrapperBegin.appendChild(wrapperShutterRight);
 
     const sloganBegin_ne = document.getElementById('sloganBeginNe'),
         sloganBegin_vseTak = document.getElementById('sloganBeginVseTak'),
@@ -129,11 +132,12 @@ function sloganBeginLoad() {
         let tl = gsap.timeline({
             onComplete: () => {
                 wrapperBegin.removeChild(containerSlogan);
-                wrapperBegin.className = 'wrapper';
+                // wrapperBegin.className = 'wrapper';
                 let tlShutter = gsap.timeline({
                     onComplete: () => {
                         wrapperBegin.removeChild(wrapperShutterLeft);
                         wrapperBegin.removeChild(wrapperShutterRight);
+                        bodyBlock.removeChild(wrapperBegin);
                     },
                     delay: "-0.3"
                 });
@@ -155,7 +159,6 @@ function sloganBeginLoad() {
                 frontScroll();
                 redvusLogoStart();
                 redvusMenuStart();
-                redvusMenuOpen();
             }
         });
 
