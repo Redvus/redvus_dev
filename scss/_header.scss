@@ -141,6 +141,13 @@
                             color: $menuLiColorHover;
                         }
                     }
+
+                    &.active {
+
+                        a {
+                            color: $secondary;
+                        }
+                    }
                 }
             }
         }

@@ -242,7 +242,7 @@
                 width: 100%;
                 font: {
                     family: $heading-font-bold;
-                    size: 12vw;
+                    size: 10vw;
                 };
                 line-height: 1;
                 color: $projectTitleColor;
@@ -322,6 +322,14 @@
         &__shutter {
             background-color: transparent;
         }
+    }
+
+    &--middle {
+        height: 30vh;
+    }
+
+    &--small {
+        height: 10vh;
     }
 
     &-bottom {

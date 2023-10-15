@@ -137,20 +137,20 @@ class ProjectFront {
                 scale: "0.95"
             })
             .from(projectImageNext, {
-                duration: 0.6,
-                delay: "-0.5",
+                duration: 0.3,
+                delay: "-0.2",
                 autoAlpha: 0,
                 scale: "1.05"
             })
             .from(projectTitle, {
-                duration: 0.6,
-                delay: "-0.5",
+                duration: 0.3,
+                delay: "-0.3",
                 autoAlpha: 0
 
             })
             .from(projectLink, {
-                duration: 0.6,
-                delay: "-0.5",
+                duration: 0.3,
+                delay: "-0.3",
                 autoAlpha: 0
             })
         ;

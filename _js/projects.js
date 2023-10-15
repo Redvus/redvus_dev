@@ -1,9 +1,8 @@
 
 
 function initMain() {
-    keyLock();
+    preloaderBeginLoad();
     scrollSmooth();
-    sloganBeginLoad();
     redvusMenuOpen();
 }
 

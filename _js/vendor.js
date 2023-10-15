@@ -5,7 +5,7 @@ const scrollLine = document.getElementById('scrollLine'),
     locoScroll = new LocomotiveScroll({
         el: wrapper,
         smooth: true,
-        multiplier: 0.3
+        multiplier: 0.2
     });
 
 function scrollSmooth() {
@@ -46,6 +46,10 @@ function scrollSmooth() {
 
 function reloadWindowResize() {
     window.onresize = function () {
+        gsap.to(wrapper, {
+            autoAlpha: 0,
+            delay: "-0.2"
+        });
         location.reload();
     }
 }
@@ -53,6 +57,10 @@ function reloadWindowResize() {
 function keyLock() {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'PageDown' || e.key === 'PageUp' || e.key === 'Home' || e.key === 'End') {
+            gsap.to(wrapper, {
+                autoAlpha: 0,
+                delay: "-0.2"
+            });
             location.reload();
         }
     }, true);
@@ -60,7 +68,6 @@ function keyLock() {
 
 function initMain() {
     reloadWindowResize();
-    keyLock();
 }
 
 function initMainMobile() {
