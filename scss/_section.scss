@@ -230,7 +230,7 @@
 
         &__text {
             width: 100%;
-            height: 15vmin;
+            height: 17vmin;
             display: block;
             position: absolute;
             // left: 50%;
@@ -242,7 +242,7 @@
                 width: 100%;
                 font: {
                     family: $heading-font-bold;
-                    size: 10vw;
+                    size: 17vmin;
                 };
                 line-height: 1;
                 color: $projectTitleColor;

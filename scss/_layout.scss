@@ -252,7 +252,9 @@
         z-index: 10;
 
         &_text {
+            line-height: $body-line-height;
             text-align: center;
+            color: $fourth;
         }
     }
 
