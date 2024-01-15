@@ -80,11 +80,8 @@ function frontScroll() {
     scrollName.scrollChangeName(sectionFront_5, "#8e8a7d", scrollMarker_5, scrollMarker_4);
     // Tarzaniya
     scrollName.scrollChangeName(sectionFront_6, "#8d9677", scrollMarker_6, scrollMarker_5);
-    // DAP Service
-    // scrollName.scrollChangeName(sectionFront_7, "#5ea2bd", scrollMarker_7, scrollMarker_6);
-    // scrollName.scrollChangeName(sectionFront_8, "rgb(82,56,67)", scrollMarker_8, scrollMarker_7);
     // Footer
-    scrollName.scrollChangeName(sectionFront_9, "#092330", scrollMarker_9, scrollMarker_8);
+    // scrollName.scrollChangeName(sectionFront_7, "#092330", scrollMarker_7, scrollMarker_6);
 
     function sectionTopMove() {
         let tl = new gsap.timeline({
@@ -172,12 +169,12 @@ function frontScroll() {
         projectImage_5,
         projectImage_6);
 
-    // projectFrontAnim.projectFrontSimple(
-    //     sectionFront_7,
-    //     projectTitle_7,
-    //     projectLink_7,
-    //     projectImage_6,
-    //     projectImage_7);
+    projectFrontAnim.projectFrontSimple(
+        sectionFront_7,
+        projectTitle_7,
+        projectLink_7,
+        projectImage_6,
+        projectImage_7);
 
     // projectFrontAnim.projectFrontSimple(
     //     sectionFront_8,
@@ -186,12 +183,12 @@ function frontScroll() {
     //     projectImage_7,
     //     projectImage_8);
 
-    projectFrontAnim.projectFrontSimple(
-        sectionFront_9,
-        projectTitle_9,
-        projectLink_9,
-        projectImage_8,
-        projectImage_9);
+    // projectFrontAnim.projectFrontSimple(
+    //     sectionFront_9,
+    //     projectTitle_9,
+    //     projectLink_9,
+    //     projectImage_8,
+    //     projectImage_9);
 
     // projectFrontAnim.projectFrontSimple(
     //     sectionFront_10,

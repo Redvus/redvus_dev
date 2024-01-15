@@ -162,6 +162,5 @@ function sloganTopLoad() {
             })
         ;
     }
-
     sloganTopAnim();
 }
