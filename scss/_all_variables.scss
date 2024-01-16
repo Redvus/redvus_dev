@@ -28,7 +28,7 @@ $navHoverColor           : $third;
 
 /*----------  Layout  ----------*/
 $layoutBackground        : lighten($five, 30%);
-$layoutShutterBackground : $secondary;
+$layoutShutterBackground : $layoutBackground;
 $layoutInfoWidth         : 50%;
 $layoutContactWidth      : 50%;
 $headerLineHeight        : 0.8rem;

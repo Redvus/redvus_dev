@@ -290,10 +290,10 @@
             }
 
             &__nav {
-                width: calc(100% - 4rem);
-                height: calc(100% - 4rem);
+                width: $shutterWidthMobile;
+                height: $shutterHeightMobile;
                 text-align: center;
-                padding: 2rem;
+                padding: 0;
 
                 nav {
                     width: 100%;

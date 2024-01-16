@@ -377,17 +377,19 @@ function sloganBeginLoadMobile() {
                     .to(wrapperShutterLeft, {
                         duration: 0.4,
                         delay: "0.4",
-                        x: "-100%",
+                        y: "-100%",
                         zIndex: "-1"
                     })
                     .to(wrapperShutterRight, {
                         duration: 0.4,
                         delay: "-0.4",
-                        x: "100%",
+                        y: "100%",
                         zIndex: "-1"
                     })
                 ;
                 sloganTopLoad();
+                // frontScroll();
+                redvusLogoStartMobile();
             }
         });
 

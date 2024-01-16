@@ -8,7 +8,8 @@ function initMain() {
 }
 
 function initMainMobile() {
-    // sloganBeginLoadMobile();
+    sloganBeginLoadMobile();
+    redvusMenuOpenMobile();
 }
 
 if (document.body.clientWidth > 820 || screen.width > 820) {
