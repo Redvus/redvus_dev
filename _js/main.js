@@ -8,6 +8,7 @@ function initMain() {
 }
 
 function initMainMobile() {
+    scrollSmoothMobile();
     sloganBeginLoadMobile();
     redvusMenuOpenMobile();
 }

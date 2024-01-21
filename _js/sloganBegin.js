@@ -388,7 +388,7 @@ function sloganBeginLoadMobile() {
                     })
                 ;
                 sloganTopLoad();
-                // frontScroll();
+                frontScrollMobile();
                 redvusLogoStartMobile();
             }
         });

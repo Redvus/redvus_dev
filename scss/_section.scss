@@ -408,10 +408,20 @@
     }
 
     @include grid-media($Small) {
+        //height: 100vh;
 
         &-container {
             position: inherit;
             overflow: auto;
+        }
+
+        &-top {
+            height: 100vh;
+
+            .section-project__link {
+                display: none;
+                visibility: hidden;
+            }
         }
 
         &-title {
@@ -424,28 +434,27 @@
             visibility: hidden;
 
             &__text {
-                top: 45%;
+                //top: 45%;
 
                 h2 {
                     font-size: 20vw;
-                    color: $projectTitleColorMobile;
-                    top: 150%;
+                    //color: $projectTitleColorMobile;
+                    //top: 150%;
                 }
             }
 
             &__link {
-                width: calc(100% - 2rem);
-                display: inline-block;
-                font-size: 6vw;
-                top: 60%;
-                padding: 0 1rem;
-                text-align: center;
+                //width: calc(100% - 2rem);
+                //display: inline-block;
+                font-size: 4vw;
+                //top: 60%;
+                //padding: 0 1rem;
                 // opacity: 1;
             }
 
             &__image {
                 width: 100%;
-                top: 105%;
+                //top: 105%;
                 // opacity: 1;
             }
         }

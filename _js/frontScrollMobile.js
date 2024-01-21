@@ -1,4 +1,4 @@
-function frontScroll() {
+function frontScrollMobile() {
 
     const sectionFront_0 = document.getElementById('sectionFront_0'),
         sectionFront_1 = document.getElementById('sectionFront_1'),
@@ -69,17 +69,17 @@ function frontScroll() {
     ;
 
     // Benchmark
-    scrollName.scrollChangeName(sectionFront_1, "#7e6f73", scrollMarker_1, scrollMarker_0);
+    scrollName.scrollChangeNameMobile(sectionFront_1, "#7e6f73", scrollMarker_1, scrollMarker_0);
     // SMIBS
-    scrollName.scrollChangeName(sectionFront_2, "#c49176", scrollMarker_2, scrollMarker_1);
+    scrollName.scrollChangeNameMobile(sectionFront_2, "#c49176", scrollMarker_2, scrollMarker_1);
     // Listt
-    scrollName.scrollChangeName(sectionFront_3, "#a98470", scrollMarker_3, scrollMarker_2);
+    scrollName.scrollChangeNameMobile(sectionFront_3, "#a98470", scrollMarker_3, scrollMarker_2);
     // Goliaph
-    scrollName.scrollChangeName(sectionFront_4, "#919292", scrollMarker_4, scrollMarker_3);
+    scrollName.scrollChangeNameMobile(sectionFront_4, "#919292", scrollMarker_4, scrollMarker_3);
     // Forte
-    scrollName.scrollChangeName(sectionFront_5, "#8e8a7d", scrollMarker_5, scrollMarker_4);
+    scrollName.scrollChangeNameMobile(sectionFront_5, "#8e8a7d", scrollMarker_5, scrollMarker_4);
     // Tarzaniya
-    scrollName.scrollChangeName(sectionFront_6, "#8d9677", scrollMarker_6, scrollMarker_5);
+    scrollName.scrollChangeNameMobile(sectionFront_6, "#8d9677", scrollMarker_6, scrollMarker_5);
     // Footer
     // scrollName.scrollChangeName(sectionFront_7, "#092330", scrollMarker_7, scrollMarker_6);
 
