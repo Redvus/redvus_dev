@@ -1,5 +1,4 @@
 
-
 function initMain() {
     preloaderBeginLoad();
     scrollSmooth();
