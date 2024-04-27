@@ -525,6 +525,21 @@
                 top: 50vh;
             }
         }
+
+        &__list {
+            width: calc(100vw - 2rem);
+            height: calc(100vh - (#{$shutterHeightMobile} * 2));
+            left: 1rem;
+            padding: $shutterHeightMobile 0;
+
+            li {
+                width: 100%;
+
+                &:last-child {
+                    padding-bottom: $shutterHeightMobile;
+                }
+            }
+        }
     }
 }
 
@@ -623,6 +638,14 @@
 
 .filled {
     fill: $primary;
+}
+
+.grecaptcha-badge {
+
+    @include grid-media($XSmall) {
+        display: none;
+        visibility: hidden;
+    }
 }
 
 /*=====  End of Layout  ======*/

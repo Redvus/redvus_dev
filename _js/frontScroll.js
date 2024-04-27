@@ -1,6 +1,7 @@
 function frontScroll() {
 
-    const sectionFront_0 = document.getElementById('sectionFront_0'),
+    const
+        sectionFront_0 = document.getElementById('sectionFront_0'),
         sectionFront_1 = document.getElementById('sectionFront_1'),
         sectionFront_2 = document.getElementById('sectionFront_2'),
         sectionFront_3 = document.getElementById('sectionFront_3'),
@@ -32,7 +33,8 @@ function frontScroll() {
         scrollName = new ScrollChange();
     ;
 
-    const projectFrontAnim = new ProjectFront(),
+    const
+        projectFrontAnim = new ProjectFront(),
         projectTitle_0 = document.getElementById('projectTitle_0'),
         projectImage_0 = document.getElementById('projectImage_0'),
         projectLink_0 = document.getElementById('projectLink_0'),

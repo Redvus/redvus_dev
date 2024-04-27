@@ -36,8 +36,8 @@
 
     @include grid-media($XSmall) {
         margin-bottom: 5rem;
-        display: none;
-        visibility: hidden;
+        //display: none;
+        //visibility: hidden;
     }
 }
 
@@ -219,13 +219,13 @@
             }
         }
 
-        &__field {
-
-            &--file {
-                display: none;
-                visibility: hidden;
-            }
-        }
+        //&__field {
+        //
+        //    &--file {
+        //        display: none;
+        //        visibility: hidden;
+        //    }
+        //}
 
         &-button {
             margin-top: 2rem;

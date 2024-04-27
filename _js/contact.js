@@ -1,69 +1,20 @@
 ;(function ($) {
 
-/*=======================================
-=            Contact content            =
-=======================================*/
-
-//First Slogan
-var redvusWrapperContent = $('.wrapper-contact__content'),
-    redvusFormInput = $('.input'),
-    redvusFormAgreement = $('.ajax_form__agreement'),
-    redvusContactFooter = $('footer p')
-;
-
-function redvusContactActivate() {
-
-    var tl = new TimelineMax({ delay: "4" });
-
-    tl
-        // .from(redvusWrapperContent, 2, {
-        //     // scale: 1.1,
-        //     yPercent: "3",
-        //     autoAlpha: 0,
-        //     ease: Power2.easeInOut
-        // })
-        .staggerFrom(redvusFormInput, 0.8, {
-            // scale: 1.1,
-            yPercent: "10",
-            autoAlpha: 0,
-            ease: Power2.easeInOut
-        }, "0.3")
-        .from(redvusFormAgreement, 0.8, {
-            // scale: 1.1,
-            yPercent: "3",
-            autoAlpha: 0,
-            ease: Power2.easeInOut
-        }, "-=0.4")
-        .from(redvusContactFooter, 0.6, {
-            // scale: 1.1,
-            // yPercent: "3",
-            autoAlpha: 0,
-            ease: Power2.easeInOut
-        }, "-=0.6")
-    ;
-
-    return tl;
-}
-
-/*=====  End of Contact content  ======*/
-
 function init() {
     preloaderBeginLoad();
     redvusMenuOpen();
 }
 
 function initMobile() {
-
+    preloaderBeginMobileLoad();
+    redvusMenuOpenMobile();
 }
 
 if (document.body.clientWidth > 420 || screen.width > 420) {
-
     window.onload = function() {
         init();
     };
-
 } else {
-
     window.onload = function() {
         initMobile();
     };

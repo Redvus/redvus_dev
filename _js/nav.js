@@ -22,7 +22,8 @@ const redvus_logo_v_pencil = document.getElementById('redvus_logo_v_pencil'),
     redvusWrapperContent = document.querySelector('.section-container'),
     redvusMenuLi = document.querySelectorAll('#nav > ul > li'),
     redvusAdressLi = document.querySelectorAll('.shutter-right__adress li'),
-    redvusNavSection = document.getElementById('nav')
+    redvusNavSection = document.getElementById('nav'),
+    shutterRightNav = document.querySelector('.shutter-right__nav')
 ;
 
 function redvusLogoStart() {
@@ -385,9 +386,12 @@ function redvusMenuOpenMobile() {
     });
 
     tl
+        .to(shutterRightNav, {
+            justifyContent: 'center'
+        })
         .to(redvus_shutter_right, {
             duration: 0.8,
-            // delay: "-0.2",
+            delay: "-0.2",
             height: '70vh',
             backgroundColor: '#092330',
             ease: "power3.inOut"
