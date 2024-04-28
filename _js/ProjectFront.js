@@ -156,4 +156,47 @@ class ProjectFront {
         ;
         ScrollTrigger.refresh();
     }
+
+    projectGame(
+        projectNum,
+        projectTitle,
+        projectLink,
+        projectImagePrev,
+        projectImageNext) {
+        let tl = new gsap.timeline({
+            scrollTrigger: {
+                trigger: projectNum,
+                scroller: wrapper,
+                scrub: false,
+                start: "bottom bottom",
+                end: () => "+=" + projectNum.offsetHeight,
+                toggleActions: "play none none reverse"
+            }
+        });
+
+        tl
+            .to(projectImagePrev, {
+                autoAlpha: 0,
+                // scale: "0.95"
+            })
+            .from(projectImageNext, {
+                duration: 0.3,
+                delay: "-0.2",
+                autoAlpha: 0,
+                // scale: "1.05"
+            })
+            .from(projectTitle, {
+                duration: 0.3,
+                delay: "-0.3",
+                autoAlpha: 0
+
+            })
+            .from(projectLink, {
+                duration: 0.3,
+                delay: "-0.3",
+                autoAlpha: 0
+            })
+        ;
+        ScrollTrigger.refresh();
+    }
 }

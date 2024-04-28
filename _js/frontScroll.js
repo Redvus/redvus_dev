@@ -171,12 +171,12 @@ function frontScroll() {
         projectImage_5,
         projectImage_6);
 
-    projectFrontAnim.projectFrontSimple(
-        sectionFront_7,
-        projectTitle_7,
-        projectLink_7,
-        projectImage_6,
-        projectImage_7);
+    // projectFrontAnim.projectFrontSimple(
+    //     sectionFront_7,
+    //     projectTitle_7,
+    //     projectLink_7,
+    //     projectImage_6,
+    //     projectImage_7);
 
     // projectFrontAnim.projectFrontSimple(
     //     sectionFront_8,

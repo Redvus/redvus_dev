@@ -48,6 +48,7 @@ $shutterHeightMobile     : 3rem;
 
 /*----------  Section  ----------*/
 $sectionTopBlockWidth: 42vmin;
+$sectionProjectTextHeight: 13vmin;
 
 /*----------  Slogan & Skills  ----------*/
 $sloganColorLight        : $fourth;
@@ -61,8 +62,11 @@ $skillsTextColor         : $fourth;
 
 /*----------  Project  ----------*/
 $projectTitleColor       : rgba($fourth, 0.3);
+$projectTitleColorDark   : rgba($third, 0.5);
+$projectTitleColorFill   : $fourth;
 $projectTextColor        : $fourth;
 $projectTitleColorMobile : $fourth;
+$projectLinkColorDark   : $third;
 
 /*=====  End of Variable  ======*/
 

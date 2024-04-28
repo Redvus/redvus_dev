@@ -1,7 +1,8 @@
 'use strict';
 
 function sloganBeginLoad() {
-    const wrapperBegin = document.querySelector('.wrapper-begin'),
+    const
+        wrapperBegin = document.querySelector('.wrapper-begin'),
         bodyBlock = document.body,
         containerSlogan = document.createElement('div'),
         // wrapperShutterLeft = document.createElement('div'),
