@@ -12,13 +12,6 @@ function gamesScroll() {
         sectionGame_8 = document.getElementById('sectionGame_8'),
         sectionGame_9 = document.getElementById('sectionGame_9'),
         sectionGame_10 = document.getElementById('sectionGame_10'),
-        sloganTopDesign = document.getElementById('sloganTopDesign'),
-        sloganTopSmart = document.getElementById('sloganTopSmart'),
-        sloganTopEffective = document.getElementById('sloganTopEffective'),
-        sloganTopVisual = document.getElementById('sloganTopVisual'),
-        sloganTopUnic = document.getElementById('sloganTopUnic'),
-        sloganTopSpecific = document.getElementById('sloganTopSpecific'),
-        sloganTopLine = document.getElementById('sectionTopLine'),
         scrollMarker_0 = document.getElementById('scrollMarker_0'),
         scrollMarker_1 = document.getElementById('scrollMarker_1'),
         scrollMarker_2 = document.getElementById('scrollMarker_2'),
@@ -34,7 +27,7 @@ function gamesScroll() {
     ;
 
     const
-        projectFrontAnim = new ProjectFront(),
+        projectGameAnim = new ProjectFront(),
         projectTitle_0 = document.getElementById('projectTitle_0'),
         projectImage_0 = document.getElementById('projectImage_0'),
         projectLink_0 = document.getElementById('projectLink_0'),
@@ -105,49 +98,49 @@ function gamesScroll() {
 
 
     // Games
-    projectFrontAnim.projectGame(
+    projectGameAnim.projectGame(
         sectionGame_1,
         projectTitle_1,
         projectLink_1,
         projectImage_0,
         projectImage_1);
 
-    projectFrontAnim.projectGame(
+    projectGameAnim.projectGame(
         sectionGame_2,
         projectTitle_2,
         projectLink_2,
         projectImage_1,
         projectImage_2);
 
-    projectFrontAnim.projectGame(
+    projectGameAnim.projectGame(
         sectionGame_3,
         projectTitle_3,
         projectLink_3,
         projectImage_2,
         projectImage_3);
 
-    projectFrontAnim.projectGame(
+    projectGameAnim.projectGame(
         sectionGame_4,
         projectTitle_4,
         projectLink_4,
         projectImage_3,
         projectImage_4);
 
-    projectFrontAnim.projectGame(
+    projectGameAnim.projectGame(
         sectionGame_5,
         projectTitle_5,
         projectLink_5,
         projectImage_4,
-        projectImage_5);projectImage_5
+        projectImage_5);
 
-    projectFrontAnim.projectGame(
+    projectGameAnim.projectGame(
         sectionGame_6,
         projectTitle_6,
         projectLink_6,
         projectImage_5,
         projectImage_6);
 
-    projectFrontAnim.projectGame(
+    projectGameAnim.projectGame(
         sectionGame_7,
         projectTitle_7,
         projectLink_7,
